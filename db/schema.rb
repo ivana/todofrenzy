@@ -12,9 +12,10 @@
 ActiveRecord::Schema.define(:version => 20100125170852) do
 
   create_table "items", :force => true do |t|
-    t.string   "description",                       :null => false
-    t.boolean  "done",        :default => false,    :null => false
-    t.string   "priority",    :default => "normal", :null => false
+    t.string   "description",                     :null => false
+    t.boolean  "done",         :default => false, :null => false
+    t.string   "priority",                        :null => false
+    t.integer  "todo_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

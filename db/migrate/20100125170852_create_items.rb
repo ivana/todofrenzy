@@ -5,6 +5,8 @@ class CreateItems < ActiveRecord::Migration
       t.boolean :done, :null => false, :default => false
       t.string :priority, :null => false
 
+      t.references :todo_list
+
       t.timestamps
     end
   end
