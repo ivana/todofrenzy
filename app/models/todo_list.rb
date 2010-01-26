@@ -1,5 +1,5 @@
 class TodoList < ActiveRecord::Base
-  has_many :items, :dependent => :destroy 
+  has_many :items, :dependent => :destroy
 
   validates_presence_of :name
 end
