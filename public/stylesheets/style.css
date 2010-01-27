@@ -1,4 +1,23 @@
+@font-face { font-family:ArtBrush; src:url("../fonts/Artbrush.ttf") }
+
 * {
   vertical-align:baseline;
   border:0 none; padding:0; margin:0;
 }
+
+body {
+  font:62.5% Arial, Helvetica, sans-serif;
+  margin: 3em 3em 0;
+  background:whitesmoke; color:#222;
+}
+  body > * { font-size:1.2em }
+
+ol, ul { list-style-position: inside }
+body > ol { list-style:none }
+  body > ol > li { border:1px solid; padding:1em; width:20%; }
+h2 + ol { line-height:1.5em }
+
+h1, h2 { font-family:Artbrush, "Trebuchet MS", Verdana, sans-serif }
+h1 { font-size:5em; margin-bottom:.4em }
+h2 { font-size:2em; margin-bottom:.25em; text-decoration:underline }
+
