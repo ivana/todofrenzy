@@ -2,7 +2,7 @@
 
 * {
   vertical-align:baseline;
-  border:0 none; padding:0; margin:0;
+  padding:0; margin:0;
 }
 
 body {
@@ -25,6 +25,7 @@ h2 { font-size:2em; margin-bottom:.25em; text-decoration:underline }
 h1 + a {
   margin:.4em 0;
   font-size:1.4em !important;
+  float:left;
 }
   h1 + a .ui-icon { left:3% }
 
@@ -32,8 +33,15 @@ h1 + a {
 ol, ul { list-style-position: inside }
 body > ol { list-style:none }
   body > ol > li {
-    border:1px dotted; padding:1em;
+    border:1px solid; padding:1em;
     margin:0 2.4em 1em 0; width:20.5%;
     float:left; clear:right;
   }
 h2 + ol { line-height:1.5em }
+
+/* forms */
+#new_todo_list { padding:.7em; display:none }
+  #new_todo_list label, #new_todo_list input { vertical-align:middle }
+  #new_todo_list label { font-size:1.2em }
+  input#todo_list_name { font-size:1.4em; margin-right:.2em }
+  input#todo_list_name ~ input { font-size:1em }
