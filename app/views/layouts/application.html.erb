@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <title>ToDo Frenzy</title>
+
     <%= stylesheet_link_tag "style" %>
+    <%= stylesheet_link_tag "jquery/jquery-ui-1.8rc1.custom" %>
+
+    <meta name="author" lang="hr" content="Ivana Vasilj, ivasilj@gmail.com">
+    <!-- todo -->
+    <meta name="keywords" content="to do todo to-do frenzy list lists task tasks">
+    <meta name="description" content="">
   </head>
 
   <body>
@@ -11,11 +18,16 @@
 
     <%= yield %>
 
-    <div style="width:5em; height:5em; background:crimson; margin-top:2em"></div>
+    <div style="width:5em; height:5em; background:crimson; margin-top:2em; clear:left"></div>
     <div style="width:5em; height:5em; background:#DD5511"></div>
     <div style="width:5em; height:5em; background:green"></div>
-    <div style="width:5em; height:5em; background:#205BAB"></div>
+    <div style="width:5em; height:5em; background:#205BAA"></div>
     <div style="width:5em; height:5em; background:purple"></div>
     <div style="width:5em; height:5em; background:dimgray"></div>
+
+    <%= javascript_include_tag "jquery/jquery-1.4.1.min" %>
+    <%= javascript_include_tag "jquery/jquery-ui-1.8rc1.custom.min" %>
+
+    <%= javascript_include_tag "todo-lists" %>
   </body>
 </html>
