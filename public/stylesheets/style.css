@@ -40,7 +40,7 @@ body > ol { list-style:none }
 h2 + ol { line-height:1.5em }
 
 /* forms */
-form#new_todo_list { padding:.7em; display:none }
+form#new_todo_list { padding:.7em 0; display:none }
   form#new_todo_list label, #new_todo_list input { vertical-align:middle }
   form#new_todo_list label { font-size:1.2em }
   input#todo_list_name { font-size:1.4em; margin-right:.2em }
