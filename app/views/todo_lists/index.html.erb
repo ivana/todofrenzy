@@ -4,7 +4,12 @@
     <li>
       <h2><%= list.name %></h2>
 
-      <ol>
+      <ol class="actions">
+        <li><a class="edit" href="#">Edit list</a></li> <!-- edit only name for start, later incl items -->
+        <li><a class="del" href="#">Delete list</a></li>
+      </ol>
+
+      <ol class="items">
         <% for item in list.items %>
           <li><%= item.description %></li>
         <% end %>
