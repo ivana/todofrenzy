@@ -1,12 +1,12 @@
 <ol>
   <% for list in @lists %>
 
-    <li>
+    <li id="<%= dom_id(list) %>">
       <h2><%= list.name %></h2>
 
       <ol class="actions">
         <li><a class="edit" href="#">Edit list</a></li> <!-- edit only name for start, later incl items -->
-        <li><a class="del" href="#">Delete list</a></li>
+        <li><%= link_to 'Delete list', todo_list_path(:id => list.id), :class => 'del' %></li>
       </ol>
 
       <ol class="items">

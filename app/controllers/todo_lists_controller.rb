@@ -6,8 +6,11 @@ class TodoListsController < ApplicationController
   end
 
   def create
-    todo_list = TodoList.create params[:todo_list]
-    render :json => todo_list
+    render :json => TodoList.create(params[:todo_list])
+  end
+
+  def destroy
+    render :json => TodoList.find(params[:id]).destroy
   end
 
 end
