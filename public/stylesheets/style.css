@@ -8,7 +8,7 @@
 body {
   font:62.5% Arial, Helvetica, sans-serif;
   margin:3em 0 0 3em;
-  background:whitesmoke; color:#555;
+  background:ivory; color:#4C3000;
 }
   body > * { font-size:1.2em }
 
@@ -16,6 +16,7 @@ body {
 h1, h2 { font-family:Artbrush, "Trebuchet MS", Verdana, sans-serif }
 h1 {
   font-size:5em;
+  text-shadow:1px 1px 5px goldenrod;
   margin:0 .8em .4em 0;
   float:right;
 }
@@ -36,15 +37,16 @@ h1 + a {
 ol, ul { list-style-position: inside }
 body > ol, ol.actions { list-style:none }
   body > ol > li {
-    border:1px solid; padding:1em;
-    margin:0 2.4em 1em 0; width:20.5%;
+    border:1px solid goldenrod; background:lemonchiffon;
+    margin:0 2.4em 1em 0; width:20.5%; padding:1em;
     float:left; clear:right;
   }
 ol.items {
   line-height:1.5em;
   clear:left;
 }
-ol.actions { float:right; width:13% }
+ol.actions { float:right; width:11.2% }
+  ol.actions .ui-widget { font-size:1em !important }
 
 /* forms */
 form#new_todo_list { padding:.7em 0; display:none }
@@ -52,3 +54,4 @@ form#new_todo_list { padding:.7em 0; display:none }
   form#new_todo_list label { font-size:1.2em }
   input#todo_list_name { font-size:1.4em; margin-right:.2em }
   input#todo_list_name ~ input { font-size:1em }
+
