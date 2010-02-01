@@ -18,7 +18,7 @@ body {
 h1, h2 { font-family:Artbrush, "Trebuchet MS", Verdana, sans-serif }
 h1 {
   font-size:5em;
-  text-shadow:1px 1px 5px goldenrod;
+  text-shadow:1px 1px 5px #555;
   margin:0 .8em .4em 0;
   float:right;
 }
@@ -43,6 +43,7 @@ ol, ul { list-style-position: inside }
 body > ol, ol.actions { list-style:none }
   body > ol > li {
     border:1px solid goldenrod; background:lemonchiffon;
+    border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
     margin:0 2.4em 1em 0; width:20.5%; padding:1em;
     float:left; clear:right;
   }
