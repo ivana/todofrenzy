@@ -2,10 +2,13 @@ $(function(){
 
   $('h1 + a').live('click', function(){  // show new list form
     toggleCreateNewListElements();
+    $('input#todo_list_name').focus();
+    return false;
   });
 
   $('form#new_todo_list input[type="reset"]').live('click', function(){ // cancel new list creation
     toggleCreateNewListElements();
+    return false;
   });
 
   $('form#new_todo_list').live('submit', function(){ // save new list
@@ -35,17 +38,12 @@ $(function(){
     return false;
   });
 
+  /* helper functions */
+  
   var toggleCreateNewListElements = function(){ // toggle form and button - show one, hide another
     $('input#todo_list_name').val('');
     $('form#new_todo_list').toggle(); // there could be some troubles with jQuery toggle in IE
     $('h1 + a').toggle();
   };
-
-    // uhvati click na neki od delete linkova
-    // treba pogledati njegovog parenta da se vidi koja je lista
-//    $.delete(
-//      '/todo_lists/<id>'
-//    )
-
 
 });
