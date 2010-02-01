@@ -6,12 +6,17 @@ $(function(){
     icons: { primary: 'ui-icon-circle-plus' }
   });
 
-  $('a.edit').button({
+  $('a.new-item').button({  // add new item
+    icons: { primary: 'ui-icon-plus' },
+    text:false
+  });
+
+  $('a.edit').button({ // edit list
     icons: { primary: 'ui-icon-pencil'},
     text: false
   });
 
-  $('a.del').button({
+  $('a.del').button({ // delete list
     icons: { primary: 'ui-icon-trash'},
     text: false
   });
