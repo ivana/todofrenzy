@@ -27,9 +27,24 @@
       </div>
     <% end %>
 
+    <% form_for @item do |i| %>
+      <div>
+        <%= i.label :description, 'New item:' %>
+        <%= i.text_field :description, :size => 24 %>
+
+        <%= hidden_field_tag 'item[todo_list_id]', 0 %>
+      </div>
+
+      <div>
+        <%= i.submit 'Add new item' %>
+        <input type="reset" value="Close" class="ui-priority-secondary" />
+      </div>
+    <% end %>
+
     <%= yield %>
 
-    <div style="width:5em; height:5em; background:ivory; margin-top:2em; clear:left"></div>
+    <div style="width:5em; height:5em; background:peachpuff; margin-top:2em; clear:left"></div>
+    <div style="width:5em; height:5em; background:ivory"></div>
     <div style="width:5em; height:5em; background:lightyellow"></div>
     <div style="width:5em; height:5em; background:goldenRod"></div>
     <div style="width:5em; height:5em; background:#4C3000"></div>
@@ -40,5 +55,6 @@
 
     <%= javascript_include_tag "visual" %>
     <%= javascript_include_tag "todo-lists" %>
+    <%= javascript_include_tag "items" %>
   </body>
 </html>

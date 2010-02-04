@@ -35,7 +35,7 @@ h1 + a {
 }
   h1 + a .ui-icon { left:3% }
 
-.ui-button:focus, .ui-button:active { outline:0 none }
+.ui-button:focus, .ui-button:active { outline:0 }
 .ui-button:active { color:#4C3000 }
 
 /* lists */
@@ -69,7 +69,8 @@ form#new_todo_list { padding:.7em 0; display:none }
   #new_todo_list input { vertical-align:middle }
   input#todo_list_name { font-size:1.4em; margin-right:.2em }
 
+form#new_item { display:none; margin:1em 0 }
   form#new_item label { display:none }
-  input#new_item_description { font-size:1.1em }
-  form#new_item input[type="submit"], form#new_item input[type="reset"] { padding:.2em .4em }
+  input#item_description { font-size:1.1em}
+  form#new_item input[type="submit"], form#new_item input[type="reset"] { padding:.2em .4em; margin-top:.5em }
 

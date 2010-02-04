@@ -10,20 +10,6 @@
         <li><%= link_to 'Delete list', todo_list_path(:id => list.id), :class => 'del' %></li>
       </ol>
 
-      <% form_for @item do |i| %>
-        <div>
-          <%= i.label :description, 'New item:' %>
-          <%= i.text_field :description, :size => 24 %>
-
-          <%= hidden_field_tag 'item[todo_list_id]', list.id %>
-        </div>
-
-        <div>
-          <%= i.submit 'Add new item' %>
-          <input type="reset" value="Cancel" class="ui-priority-secondary" />
-        </div>
-      <% end %>
-
       <ul class="items">
         <% for item in list.items %>
           <li><%= item.description %></li>

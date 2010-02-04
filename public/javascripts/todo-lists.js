@@ -12,6 +12,7 @@ $(function(){
   });
 
   $('form#new_todo_list').live('submit', function(){ // save new list
+    
     $.post(
       $(this).attr('action'),
       $(this).serialize(),
