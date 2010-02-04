@@ -42,25 +42,34 @@ h1 + a {
 ol, ul { list-style-position: inside }
 body > ol, ol.actions { list-style:none }
   body > ol > li {
-    border:1px solid goldenrod; background:lemonchiffon;
+    border:1px solid goldenrod; background:lightyellow;
     border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
     margin:0 2.4em 1em 0; width:20.5%; padding:1em;
     float:left; clear:right;
   }
-ol.items {
+
+ol.actions { float:right; width:11.2% }
+  ol.actions a { font-size:1em !important }
+
+ul.items {
+  list-style-type:disc;
   line-height:1.5em;
   clear:left;
 }
-ol.actions { float:right; width:11.2% }
-  ol.actions a { font-size:1em !important }
+.high { font-weight:bold }
+.low { font-size:.9em }
 
 /* forms */
 input[type="text"] { border:2px solid #FECE2F }
 input[type="text"]:focus { box-shadow:0 0 5px #FECE2F; -moz-box-shadow:0 0 5px #FECE2F; -webkit-box-shadow:0 0 5px #FECE2F }
+input[type="submit"], input[type="reset"] { font-size:1em }
 
 form#new_todo_list { padding:.7em 0; display:none }
   form#new_todo_list label { font-size:1.2em; vertical-align:text-top }
   #new_todo_list input { vertical-align:middle }
   input#todo_list_name { font-size:1.4em; margin-right:.2em }
-  input#todo_list_name ~ input { font-size:1em }
+
+  form#new_item label { display:none }
+  input#new_item_description { font-size:1.1em }
+  form#new_item input[type="submit"], form#new_item input[type="reset"] { padding:.2em .4em }
 

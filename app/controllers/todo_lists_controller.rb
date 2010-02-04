@@ -3,6 +3,7 @@ class TodoListsController < ApplicationController
   def index
     @lists = TodoList.all(:order => 'created_at DESC')
     @todo_list = TodoList.new
+    @item = Item.new
   end
 
   def create
