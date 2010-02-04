@@ -4,8 +4,8 @@
   vertical-align:baseline;
   padding:0; margin:0;
 }
-*::selection { background:#FECE2F !important }
-*::-moz-selection { background:#FECE2F !important }
+*::selection { background:sandybrown }
+*::-moz-selection { background:sandybrown }
 
 body {
   font:62.5% Arial, Helvetica, sans-serif;
@@ -29,27 +29,26 @@ h2 {
 
 /* anchors, buttons */
 h1 + a {
-  margin:.4em 0;
-  font-size:1.4em !important;
+  color:ivory;
+  background:-moz-linear-gradient(center top , chocolate, #4C3000) chocolate;
+  border:1px solid #4C3000;
+  border-radius:7px; -moz-border-radius:7px; -webkit-border-radius:7px;
+  font-size:1.4em; text-decoration:none;
+  margin:.4em 0; padding:.5em 1em;
   float:left;
 }
-  h1 + a .ui-icon { left:3% }
-
-.ui-button:focus, .ui-button:active { outline:0 }
-.ui-button:active { color:#4C3000 }
 
 /* lists */
 ol, ul { list-style-position: inside }
 body > ol, ol.actions { list-style:none }
   body > ol > li {
-    border:1px solid goldenrod; background:lightyellow;
+    border:1px solid chocolate; background:papayawhip;
     border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
     margin:0 2.4em 1em 0; width:20.5%; padding:1em;
     float:left; clear:right;
   }
 
 ol.actions { float:right; width:11.2% }
-  ol.actions a { font-size:1em !important }
 
 ul.items {
   list-style-type:disc;
@@ -60,13 +59,13 @@ ul.items {
 .low { font-size:.9em }
 
 /* forms */
-input[type="text"] { border:2px solid #FECE2F }
-input[type="text"]:focus { box-shadow:0 0 5px #FECE2F; -moz-box-shadow:0 0 5px #FECE2F; -webkit-box-shadow:0 0 5px #FECE2F }
+input[type="text"] { border:2px solid chocolate }
+input[type="text"]:focus { box-shadow:0 0 5px chocolate; -moz-box-shadow:0 0 5px chocolate; -webkit-box-shadow:0 0 5px chocolate }
 input[type="submit"], input[type="reset"] { font-size:1em }
 
 form#new_todo_list { padding:.7em 0; display:none }
-  form#new_todo_list label { font-size:1.2em; vertical-align:text-top }
-  #new_todo_list input { vertical-align:middle }
+  form#new_todo_list label, #new_todo_list input { vertical-align:middle }
+  form#new_todo_list label { font-size:1.2em }
   input#todo_list_name { font-size:1.4em; margin-right:.2em }
 
 form#new_item { display:none; margin:1em 0 }
