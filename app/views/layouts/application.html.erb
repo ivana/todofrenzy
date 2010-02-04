@@ -17,11 +17,12 @@
     <h1>ToDo Frenzy</h1>
 
     <a href="#">Create a new list</a>
+    
     <% form_for @todo_list do |l| %>
       <div>
-        <%= l.label('New list title:') %>
+        <%= l.label(:name, 'New list title:') %>
         <%= l.text_field(:name) %> 
-        <%= l.submit("Create") %>
+        <%= l.submit('Create') %>
         <input type="reset" value="Cancel" class="ui-priority-secondary" />
       </div>
     <% end %>
@@ -29,7 +30,7 @@
     <%= yield %>
 
     <div style="width:5em; height:5em; background:ivory; margin-top:2em; clear:left"></div>
-    <div style="width:5em; height:5em; background:lemonchiffon"></div>
+    <div style="width:5em; height:5em; background:lightyellow"></div>
     <div style="width:5em; height:5em; background:goldenRod"></div>
     <div style="width:5em; height:5em; background:#4C3000"></div>
     <div style="width:5em; height:5em; background:#FECE2F"></div>
