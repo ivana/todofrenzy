@@ -28,22 +28,34 @@ h2 {
 }
 
 /* anchors, buttons */
-h1 + a {
+a, input[type="submit"], input[type="reset"] {
   color:ivory;
+  border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px;
+}
+a, input[type="submit"] {
   background-color:#4C3000;
   background-image:-moz-linear-gradient(top, chocolate, #4C3000);
   background-image:-webkit-gradient(linear, center top, center bottom, from(chocolate), to(#4C3000));
   border:1px solid #4C3000;
-  border-radius:7px; -moz-border-radius:7px; -webkit-border-radius:7px;
   box-shadow:1px 0 2px #555; -moz-box-shadow:1px 0 2px #555; -webkit-box-shadow:1px 0 2px #555;
-  text-shadow:1px 1px 1px #555;
+}
+input[type="submit"], input[type="reset"] {
+  padding:.2em .4em; font-size:1em;
+  cursor:pointer;
+}
+input[type="reset"] { background-color:sandybrown; border:0 none }
+
+a:hover, a:focus, a:active,
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active,
+input[type="reset"]:hover, input[type="reset"]:focus, input[type="reset"]:active {
+  background-color:chocolate;
+  background-image:none;
+}
+
+h1 + a {
   font-size:1.4em; text-decoration:none;
   padding:.5em 1em;
   float:left;
-}
-h1 + a:hover, h1 + a:focus, h1 + a:active {
-  background-color:chocolate;
-  background-image:none;
 }
 
 /* lists */
@@ -56,7 +68,13 @@ body > ol, ol.actions { list-style:none }
     float:left; clear:right;
   }
 
-ol.actions { float:right; width:11.2% }
+ol.actions { float:right; width:11.5% }
+  .actions a {
+    display:block; height:27px; width:27px;
+    line-height:1.6em; text-align:center;
+    font-size:1.4em; text-decoration:none;
+  }
+  .actions a.new-item { font-size:1.7em; line-height:1.4em }
 
 ul.items {
   list-style-type:disc;
@@ -68,8 +86,10 @@ ul.items {
 
 /* forms */
 input[type="text"] { border:2px solid chocolate }
-input[type="text"]:focus { box-shadow:0 0 5px chocolate; -moz-box-shadow:0 0 5px chocolate; -webkit-box-shadow:0 0 5px chocolate }
-input[type="submit"], input[type="reset"] { font-size:1em }
+input[type="text"]:focus {
+  box-shadow:0 0 5px chocolate; -moz-box-shadow:0 0 5px chocolate; -webkit-box-shadow:0 0 5px chocolate;
+  outline:0;
+}
 
 form#new_todo_list { padding:.7em 0; display:none }
   form#new_todo_list label, #new_todo_list input { vertical-align:middle }
@@ -79,5 +99,6 @@ form#new_todo_list { padding:.7em 0; display:none }
 form#new_item { display:none; margin:1em 0 }
   form#new_item label { display:none }
   input#item_description { font-size:1.1em}
-  form#new_item input[type="submit"], form#new_item input[type="reset"] { padding:.2em .4em; margin-top:.5em }
+  form#new_item input[type="submit"], form#new_item input[type="reset"] { margin-top:.5em }
+
 

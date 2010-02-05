@@ -5,9 +5,9 @@
       <h2><%= list.name %></h2>
 
       <ol class="actions">
-        <li><a class="new-item" href="#">New item</a></li>
-        <li><a class="edit" href="#">Edit list</a></li> <!-- edit only name for start, later incl items -->
-        <li><%= link_to 'Delete list', todo_list_path(:id => list.id), :class => 'del' %></li>
+        <li><a class="new-item" href="#" title="New item">+</a></li>
+        <li><a class="edit" href="#" title="Edit list">✎</a></li> <!-- edit only name for start, later incl items -->
+        <li><%= link_to '✗', todo_list_path(:id => list.id), :class => 'del', :title => 'Delete list' %></li>
       </ol>
 
       <ul class="items">
