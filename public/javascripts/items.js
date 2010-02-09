@@ -28,4 +28,22 @@ $(function(){
   $('form#new_item input[type="reset"]').live('click', function(){ // close add new item form
     $('form#new_item').hide();
   });
+
+  $('input[type="checkbox"][id^="item"]').live('click', function(){ // item checked
+    var id = $(this).attr('id').match(/\d+/)[0];
+    var url = $(this).parents('form').attr('action') + '/' + id;
+    var formId = $(this).parents('form').attr('id');
+//    console.log($('#' + formId).serialize());
+
+    $.ajax({
+      url: url,
+      type: 'PUT',
+      data: $('#' + formId).serialize(),
+      success: function(data){
+        if(data.item.done) $('#' + formId + ' label').addClass('done');
+        else $('#' + formId + ' label').removeClass('done');
+      }
+    });
+
+  });
 });
