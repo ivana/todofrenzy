@@ -6,8 +6,9 @@
 
       <ol class="actions">
         <li><a class="new-item" href="#" title="New item">+</a></li>
-        <li><a class="edit" href="#" title="Edit list">✎</a></li> <!-- edit only name for start, later incl items -->
+        <li><a class="del-done" href="#" title="Delete done items">✓</a></li>
         <li><%= link_to '✗', todo_list_path(:id => list.id), :class => 'del', :title => 'Delete list' %></li>
+        <!--<li><a class="edit" href="#" title="Edit list">✎</a></li>-->
       </ol>
 
       <ul class="items">
