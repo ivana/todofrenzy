@@ -40,8 +40,13 @@ $(function(){
       type: 'PUT',
       data: $('#' + formId).serialize(),
       success: function(data){
-        if(data.item.done) $('#' + formId + ' label').addClass('done');
-        else $('#' + formId + ' label').removeClass('done');
+        if(data.item.done){
+          $('#' + formId + ' label').addClass('done');
+          $($('#' + formId).parents('ul.items')[0]).append($('#' + formId).parents('li')[0]); // move to bottom of the list
+        } else {
+          $('#' + formId + ' label').removeClass('done');
+          $($('#' + formId).parents('ul.items')[0]).prepend($('#' + formId).parents('li')[0]); // move to top of the list
+        }
       }
     });
 
