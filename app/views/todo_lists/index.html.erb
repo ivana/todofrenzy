@@ -2,7 +2,10 @@
   <% for list in @lists %>
 
     <li id="<%= dom_id(list) %>">
-      <h2><%= list.name %></h2>
+      <a href="#">
+        <h2><%= list.name %></h2>
+        <span>click to edit name</span>
+      </a>
 
       <ol class="actions">
         <li><a class="new-item" href="#" title="New item">+</a></li>

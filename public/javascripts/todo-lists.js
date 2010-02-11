@@ -39,6 +39,13 @@ $(function(){
     return false;
   });
 
+  $('li[id^="todo_list"] > a').live('mouseenter', function(){ // list title hover
+    $(this).children('span').css('visibility', 'visible');
+  });
+  $('li[id^="todo_list"] > a').live('mouseleave', function(){
+    $(this).children('span').css('visibility', 'hidden');
+  });
+
   /* helper functions */
   
   var toggleCreateNewListElements = function(){ // toggle form and button - show one, hide another

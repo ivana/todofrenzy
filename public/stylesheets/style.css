@@ -21,18 +21,18 @@ h1 {
   float:right;
 }
 h2 {
-  margin:-.2em 0 .4em;
   font-size:1.7em;
-  text-decoration:underline;
-  float:left; width:86%;
+  text-decoration:underline; color:#4c3000;
+  margin-bottom:.1em;
 }
 
 /* anchors, buttons */
-a, input[type="submit"], input[type="reset"] {
+a { text-decoration:none }
+.actions a, h1 + a, input[type="submit"], input[type="reset"] {
   color:ivory;
   border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px;
 }
-a, input[type="submit"] {
+.actions a, h1 + a, input[type="submit"] {
   background-color:#4C3000;
   background-image:-moz-linear-gradient(top, chocolate, #4C3000);
   background-image:-webkit-gradient(linear, center top, center bottom, from(chocolate), to(#4C3000));
@@ -45,7 +45,7 @@ input[type="submit"], input[type="reset"] {
 }
 input[type="reset"] { background-color:sandybrown; border:0 none }
 
-a:hover, a:focus, a:active,
+h1 + a:hover, h1 + a:focus, h1 + a:active, .actions a:hover, .actions a:focus, .actions a:active,
 input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active,
 input[type="reset"]:hover, input[type="reset"]:focus, input[type="reset"]:active {
   background-color:chocolate;
@@ -53,7 +53,7 @@ input[type="reset"]:hover, input[type="reset"]:focus, input[type="reset"]:active
 }
 
 h1 + a {
-  font-size:1.4em; text-decoration:none;
+  font-size:1.4em;
   padding:.5em 1em;
   float:left;
 }
@@ -69,6 +69,11 @@ body > ol, ol.actions { list-style:none }
     margin:0 2.4em 1em 0; width:20.5%; padding:1em;
     float:left; clear:right;
   }
+    li[id^="todo_list"] > a {
+      margin:-.2em 0 .1em;
+      float:left; width:86%;
+    }
+      li[id^="todo_list"] > a span { color:tan; visibility:hidden }
 
 ol.actions { float:right; width:11.5% }
   .actions a {
