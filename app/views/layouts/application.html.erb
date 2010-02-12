@@ -19,10 +19,10 @@
     
     <% form_for @todo_list do |l| %>
       <div>
-        <%= l.label(:name, 'New list title:') %>
+        <%= l.label(:name, 'List title:') %>
         <%= l.text_field(:name) %> 
         <%= l.submit('Create') %>
-        <input type="reset" value="Cancel" class="ui-priority-secondary" />
+        <input type="reset" value="Cancel" />
       </div>
     <% end %>
 
@@ -36,7 +36,7 @@
 
       <div>
         <%= i.submit 'Add new item' %>
-        <input type="reset" value="Close" class="ui-priority-secondary" />
+        <input type="reset" value="Close" />
       </div>
     <% end %>
 
