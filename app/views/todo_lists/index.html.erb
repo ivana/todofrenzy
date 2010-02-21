@@ -9,7 +9,7 @@
 
       <ol class="actions">
         <li><a class="new-item" href="#" title="New item">+</a></li>
-        <li><a class="del-done" href="#" title="Delete done items">✓</a></li>
+        <li><%= link_to '✓', clear_todo_list_path(list), :class => 'clear', :title => 'Clear done items' %></li>
         <li><%= link_to '✗', todo_list_path(:id => list.id), :class => 'del', :title => 'Delete list' %></li>
         <!--<li><a class="edit" href="#" title="Edit list">✎</a></li>-->
       </ol>
