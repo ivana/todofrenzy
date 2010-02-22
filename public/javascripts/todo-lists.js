@@ -28,25 +28,25 @@ $(function(){
 
 
   $('a.del').live('click', function(){
-    var url = $(this).attr('href');
-
-    $.ajax({
-      url: url,
-      type: 'DELETE',
-      success: function(data){
-        $('#todo_list_' + data.todo_list.id).remove();
-      }
-    });
-
+    if(confirm('Sure?')){
+      
+      $.ajax({
+        url: $(this).attr('href'),
+        type: 'DELETE',
+        success: function(data){
+          $('#todo_list_' + data.todo_list.id).remove();
+        }
+      });
+    }
+    
     return false;
   }); // delete list
 
 
   $('a.clear').live('click', function(){
-    var url = $(this).attr('href');
 
     $.ajax({
-      url: url,
+      url: $(this).attr('href'),
       type: 'PUT',
       success: function(data){
         $.each(data, function(index, value){
