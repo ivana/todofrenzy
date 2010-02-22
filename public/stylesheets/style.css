@@ -23,7 +23,8 @@ h1 {
 h2 {
   font-size:1.7em;
   text-decoration:underline; color:#4c3000;
-  margin-bottom:.1em;
+  /*margin-bottom:.1em;*/
+  margin:-.2em 0 .4em; float:left; width:86%; /* properties when h2 is not editable */
 }
 
 /* anchors, buttons */
@@ -66,14 +67,16 @@ body > ol, ol.actions { list-style:none }
     border:1px solid wheat; background:papayawhip;
     border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
     box-shadow:1px -1px 3px #555; -moz-box-shadow:1px -1px 3px #555; -webkit-box-shadow:1px -1px 3px #555;
-    margin:0 2.4em 1em 0; width:20.5%; padding:1em;
+    margin:0 2.4em 1em 0; width:21.1em; padding:1em;
     float:left; clear:right;
   }
+/*
     li[id^="todo_list"] > a {
       margin:-.2em 0 .1em;
       float:left; width:86%;
     }
       li[id^="todo_list"] > a span { color:tan; visibility:hidden }
+*/
 
 ol.actions { float:right; width:11.5% }
   .actions a {

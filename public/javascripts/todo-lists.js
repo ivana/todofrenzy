@@ -59,12 +59,14 @@ $(function(){
   }); // clear done items
 
 
+/*
   $('li[id^="todo_list"] > a').live('mouseenter', function(){
     $(this).children('span').css('visibility', 'visible');
   });
   $('li[id^="todo_list"] > a').live('mouseleave', function(){
     $(this).children('span').css('visibility', 'hidden');
   }); // list title hover
+*/
 
 
 /*
