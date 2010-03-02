@@ -18,7 +18,7 @@ $(function(){
       $(this).attr('action'),
       $(this).serialize(),
       function(data){
-        $('body > ol').prepend('<li><h2>' + data.todo_list.name + '</h2></li>');
+        $('body > ol').prepend(data);
       }
     );
 

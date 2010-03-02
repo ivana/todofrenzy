@@ -7,7 +7,8 @@ class TodoListsController < ApplicationController
   end
 
   def create
-    render :json => TodoList.create(params[:todo_list])
+    @list = TodoList.create(params[:todo_list])
+    render :partial => 'todo_list', :locals => { :list => @list }
   end
 
   def destroy
