@@ -1,4 +1,5 @@
 <li id="<%= dom_id(list) %>">
+
   <!--<a href="#">-->
     <h2><%= list.name %></h2>
     <!--<span>edit name</span>-->
@@ -12,20 +13,7 @@
   </ol>
 
   <ul class="items">
-    <% for item in list.items %>
-      <li>
-
-        <% form_tag({:controller => 'items'}, {:id => dom_id(item)} ) do %>
-          <div>
-
-            <%= check_box_tag 'done', true, item.done, :id => "#{dom_id(item)}_done" %>
-            <%= label_tag "#{dom_id(item)}_done", item.description, :class => item.done ? 'done' : '' %>
-
-            <input type="hidden" name="id" value="<%= item.id %>">
-          </div>
-        <% end %>
-
-      </li>
-    <% end %>
+    <%= render :partial => 'items/item', :collection => list.items %>
   </ul>
+
 </li>

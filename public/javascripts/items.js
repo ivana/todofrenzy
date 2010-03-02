@@ -11,19 +11,20 @@ $(function(){
   });
 
 
-  $('form#new_item').live('submit', function(){ // add new item
+  $('form#new_item').live('submit', function(){
+    var listId = $(this).find('#item_todo_list_id').attr('value');
 
     $.post(
       $(this).attr('action'),
       $(this).serialize(),
       function(data){
-        $('#todo_list_' + data.item.todo_list_id + ' .items').append('<li>' + data.item.description + '</li>');
+        $('#todo_list_' + listId + ' .items').append(data);
         $('input#item_description').val('').focus();
       }
     );
 
     return false;
-  });
+  }); // add new item
 
   $('form#new_item input[type="reset"]').live('click', function(){ // close add new item form
     $('form#new_item').hide();

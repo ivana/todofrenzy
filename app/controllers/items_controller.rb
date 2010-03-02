@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
 
   def create
-    render :json => Item.create(params[:item])
+    @item = Item.create(params[:item])
+    render :partial => 'item', :locals => { :item => @item }
   end
 
   def update
