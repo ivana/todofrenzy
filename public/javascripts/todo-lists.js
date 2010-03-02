@@ -28,7 +28,7 @@ $(function(){
 
 
   $('a.del').live('click', function(){
-    if(confirm('Sure?')){
+    if(confirm('Are you sure you want to delete this list?')){
       
       $.ajax({
         url: $(this).attr('href'),
