@@ -13,15 +13,16 @@ body {
   body > * { font-size:1.2em }
 
 /* headings */
-h1, h2 { font-family:"Comic Sans MS", sans-serif; font-style:italic }
+h1, h2 { font-family:"Comic Sans MS", sans-serif }
 h1 {
-  margin:-.45em .8em .4em 0;
   font-size:4.5em;
   text-shadow:1px 1px 5px #555;
-  float:right;
+  position:absolute; top:2.85em; left:-1.2em;
+  -moz-transform:rotate(90deg); -webkit-transform:rotate(90deg); transform:rotate(90deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
 h2 {
-  font-size:1.7em;
+  font-size:1.7em; font-style:italic;
   text-decoration:underline; color:#4c3000;
   /*margin-bottom:.1em;*/
   margin:-.2em 0 .4em; float:left; width:86%; /* properties when h2 is not editable */
@@ -55,20 +56,23 @@ input[type="reset"]:hover, input[type="reset"]:focus, input[type="reset"]:active
 
 h1 + a {
   font-size:1.4em;
+  display:block; width:7.5em;
+  margin:2.6em 0 0 6.9em;
   padding:.5em 1em;
-  float:left;
 }
 h1 + a:active, input[type="submit"]:active, input[type="reset"]:active { position:relative; top:1px; left:1px }
 
 /* lists */
 ol, ul { list-style-position: inside }
 body > ol, ol.actions { list-style:none }
+
+body > ol { margin:3em 0 0 8em }
   body > ol > li {
     border:1px solid wheat; background:papayawhip;
     border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
     box-shadow:1px -1px 3px #555; -moz-box-shadow:1px -1px 3px #555; -webkit-box-shadow:1px -1px 3px #555;
-    margin:0 2.4em 1em 0; width:21.1em; padding:1em;
-    float:left; clear:right;
+    margin:0 2.4em 1em 0; padding:1em; width:19em; 
+    float:left;
   }
 /*
     li[id^="todo_list"] > a {
@@ -102,10 +106,10 @@ input[type="text"]:focus {
   outline:0;
 }
 
-form#new_todo_list { padding:.7em 0; display:none }
+form#new_todo_list { margin-left:8em; padding:.7em 0 .5em; display:none }
   form#new_todo_list label, #new_todo_list input { vertical-align:middle }
   form#new_todo_list label { font-size:1.2em }
-  input#todo_list_name { font-size:1.4em; margin-right:.2em }
+  input#todo_list_name { font-size:1.4em; margin:0 .2em }
 
 form#new_item { display:none; margin:1em 0 }
   form#new_item label { display:none }
