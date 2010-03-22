@@ -1,14 +1,10 @@
 $(function(){
 
-  $('a.new-item').live('click', function(){ // show new item form
+  $('a.new-item').live('click', function(){
     var listId = $(this).parents('li[id^=todo_list_]').attr('id').match(/\d+$/)[0];
-
-    $('form#new_item').show().insertBefore('#todo_list_' + listId + ' .items');
-    $('#item_todo_list_id').val(listId);
-    $('input#item_description').val('').focus();
-
+    showNewItemForm(listId);
     return false;
-  });
+  }); // show new item form
 
 
   $('form#new_item').live('submit', function(){
@@ -26,15 +22,14 @@ $(function(){
     return false;
   }); // add new item
 
-  $('form#new_item input[type="reset"]').live('click', function(){ // close add new item form
+  $('form#new_item input[type="reset"]').live('click', function(){
     $('form#new_item').hide();
-  });
+  }); // close add new item form
 
-  $('input[type="checkbox"][id^="item"]').live('click', function(){ // item checked
+  $('input[type="checkbox"][id^="item"]').live('click', function(){
     var id = $(this).attr('id').match(/\d+/)[0];
     var url = $(this).parents('form').attr('action') + '/' + id;
     var formId = $(this).parents('form').attr('id');
-//    console.log($('#' + formId).serialize());
 
     $.ajax({
       url: url,
@@ -50,6 +45,20 @@ $(function(){
         }
       }
     });
+    
+  }); // item checked
 
+
+  /* helper functions */
+
+  var showNewItemForm = function(listId){
+    $('form#new_item').show().insertBefore('#todo_list_' + listId + ' .items');
+    $('#item_todo_list_id').val(listId);
+    $('input#item_description').val('').focus();
+  };
+
+  $.extend({
+    showNewItemForm: showNewItemForm
   });
+
 });

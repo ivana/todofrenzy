@@ -1,28 +1,32 @@
 $(function(){
 
   $('h1 + a').live('click', function(){
-    toggleCreateNewListElements();
+    toggleNewListFormElements();
     $('input#todo_list_name').focus();
     return false;
   }); // show new list form
 
 
   $('form#new_todo_list input[type="reset"]').live('click', function(){
-    toggleCreateNewListElements();
+    toggleNewListFormElements();
     return false;
   }); // cancel new list creation
 
 
   $('form#new_todo_list').live('submit', function(){
+
     $.post(
       $(this).attr('action'),
       $(this).serialize(),
       function(data){
         $('body > ol').prepend(data);
+        var listId = $(data).attr('id').match(/\d+$/)[0];
+
+        toggleNewListFormElements();
+        $.showNewItemForm(listId);
       }
     );
 
-    toggleCreateNewListElements();
     return false;
   }); // save new list
 
@@ -77,7 +81,7 @@ $(function(){
   
   /* helper functions */
   
-  var toggleCreateNewListElements = function(){
+  var toggleNewListFormElements = function(){
     $('input#todo_list_name').val('');
     $('form#new_todo_list').toggle(); // there could be some troubles with jQuery toggle in IE
     $('h1 + a').toggle();
