@@ -23,7 +23,7 @@ $(function(){
   }); // add new item
 
   $('form#new_item input[type="reset"]').live('click', function(){
-    $('form#new_item').hide();
+    $('form#new_todo_list').after($('form#new_item').hide());
   }); // close add new item form
 
   $('input[type="checkbox"][id^="item"]').live('click', function(){

@@ -33,12 +33,19 @@ $(function(){
 
   $('a.del').live('click', function(){
     if(confirm('Are you sure you want to delete this list?')){
-      
+
       $.ajax({
         url: $(this).attr('href'),
         type: 'DELETE',
         success: function(data){
-          $('#todo_list_' + data.todo_list.id).remove();
+          var listId = data.todo_list.id;
+
+          // safety check: is there a new item form inside? we don't want it to be destroyed with list
+          if($('#todo_list_' + listId + ' form#new_item').length){
+            $('form#new_todo_list').after($('form#new_item').hide());
+          }
+
+          $('#todo_list_' + listId).remove();
         }
       });
     }
