@@ -25,7 +25,7 @@ h2 {
   font-size:1.7em; font-style:italic;
   text-decoration:underline; color:#4c3000;
   /*margin-bottom:.1em;*/
-  margin:-.2em 0 .4em; float:left; width:86%; /* properties when h2 is not editable */
+  margin:-.2em 0 .4em; float:left; width:82%; /* properties when h2 is not editable */
 }
 
 /* anchors, buttons */
@@ -56,7 +56,7 @@ input[type="reset"]:hover, input[type="reset"]:focus, input[type="reset"]:active
 
 h1 + a {
   font-size:1.4em;
-  display:block; width:7.5em;
+  display:block; width:7.6em;
   margin:2.6em 0 0 6.9em;
   padding:.5em 1em;
 }
@@ -82,7 +82,7 @@ body > ol { margin:3em 0 0 8em }
       li[id^="todo_list"] > a span { color:tan; visibility:hidden }
 */
 
-ol.actions { float:right; width:11.5% }
+ol.actions { float:right; width:12%; margin-left:1em }
   .actions a {
     display:block; height:27px; width:27px;
     line-height:1.6em; text-align:center;
@@ -113,7 +113,7 @@ form#new_todo_list { margin-left:8em; padding:.7em 0 .5em; display:none }
 
 form#new_item { display:none; margin:1em 0 }
   form#new_item label { display:none }
-  input#item_description { font-size:1.1em}
+  input#item_description { font-size:1.1em; width:80% }
   form#new_item input[type="submit"], form#new_item input[type="reset"] { margin-top:.5em }
 
 
