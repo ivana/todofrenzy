@@ -58,13 +58,22 @@ h1 + a {
   font-size:1.4em;
   display:block; width:7.6em;
   margin:2.6em 0 0 6.9em;
-  padding:.5em 1em;
+  padding:.45em 1em .55em;
 }
-h1 + a:active, input[type="submit"]:active, input[type="reset"]:active { position:relative; top:1px; left:1px }
+h1 + a[href="/login"] { width:8.33em }
+
+nav a { color:#4C3000 }
+nav a:hover { text-decoration:underline }
 
 /* lists */
 ol, ul { list-style-position: inside }
 body > ol, ol.actions, nav ol { list-style:none }
+
+nav li {
+  display:inline;
+  border-left:1px solid; padding:0 .4em 0 .6em;
+}
+nav li:first-child { border-left:0 none }
 
 body > ol { margin:3em 0 0 8em }
   body > ol > li {

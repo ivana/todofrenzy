@@ -14,44 +14,21 @@
   <body>
     <h1>All my queues</h1>
 
-    <a href="#">Create a new list</a>
+    <% if logged_in? %>
+      <a href="#" class="create">Create a new list</a>
 
-    <nav>
-      <ol>
-        <li>
-          <% if logged_in? %>
-            <a href="/logout">Log out, @<%= current_user.username %></a>
-          <% else %>
-            <a href="/login">Sign in with Twitter</a>
-          <% end %>
-        </li>
-      </ol>
-    </nav>
+      <nav>
+        <ol>
+          <li><a href="/about">About</a></li>
+          <li><a href="/logout">Log out <strong>@<%= current_user.username %></strong></a></li>
+        </ol>
+      </nav>
 
-    <% form_for @todo_list do |l| %>
-      <div>
-        <%= l.label(:name, 'List title:') %>
-        <%= l.text_field(:name) %> 
-        <%= l.submit('Create') %>
-        <input type="reset" value="Cancel" />
-      </div>
+      <%= yield %>
+  
+    <% else %>
+      <a href="/login">Sign in with Twitter</a>
     <% end %>
-
-    <% form_for @item do |i| %>
-      <div>
-        <%= i.label :description, 'New item:' %>
-        <%= i.text_field :description, :size => 24 %>
-
-        <%= hidden_field_tag 'item[todo_list_id]', 0 %>
-      </div>
-
-      <div>
-        <%= i.submit 'Add new item' %>
-        <input type="reset" value="Close" />
-      </div>
-    <% end %>
-
-    <%= yield %>
 
     <%= javascript_include_tag "jquery-1.4.2.min" %>
     <%= javascript_include_tag "todo-lists" %>

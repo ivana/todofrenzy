@@ -1,3 +1,26 @@
+<% form_for @todo_list do |l| %>
+  <div>
+    <%= l.label(:name, 'List title:') %>
+    <%= l.text_field(:name) %>
+    <%= l.submit('Create') %>
+    <input type="reset" value="Cancel" />
+  </div>
+<% end %>
+
+<% form_for @item do |i| %>
+  <div>
+    <%= i.label :description, 'New item:' %>
+    <%= i.text_field :description, :size => 24 %>
+
+    <%= hidden_field_tag 'item[todo_list_id]', 0 %>
+  </div>
+
+  <div>
+    <%= i.submit 'Add new item' %>
+    <input type="reset" value="Close" />
+  </div>
+<% end %>
+
 <ol>
   <%= render :partial => @lists, :as => :list %>
 </ol>

@@ -1,6 +1,6 @@
 $(function(){
 
-  $('h1 + a').live('click', function(){
+  $('a.create').live('click', function(){
     toggleNewListFormElements();
     $('input#todo_list_name').focus();
     return false;
@@ -32,7 +32,7 @@ $(function(){
 
 
   $('a.del').live('click', function(){
-    if(confirm('Are you sure you want to delete this list?')){
+    if(confirm('Are you sure you want to delete this list? There is no undo.')){
 
       $.ajax({
         url: $(this).attr('href'),
@@ -91,7 +91,7 @@ $(function(){
   var toggleNewListFormElements = function(){
     $('input#todo_list_name').val('');
     $('form#new_todo_list').toggle(); // there could be some troubles with jQuery toggle in IE
-    $('h1 + a').toggle();
+    $('a.create').toggle();
   }; // toggle form and button - show one, hide another
 
 });
