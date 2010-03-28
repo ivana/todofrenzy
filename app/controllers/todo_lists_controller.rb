@@ -22,4 +22,7 @@ class TodoListsController < ApplicationController
     render :json => Item.destroy_all(:done => true, :todo_list_id => params[:id])
   end
 
+  def about
+  end
+
 end

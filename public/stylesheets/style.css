@@ -30,11 +30,11 @@ h2 {
 
 /* anchors, buttons */
 a { text-decoration:none }
-.actions a, h1 + a, input[type="submit"], input[type="reset"] {
+.actions a, a.create, input[type="submit"], input[type="reset"] {
   color:ivory;
   border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px;
 }
-.actions a, h1 + a, input[type="submit"] {
+.actions a, a.create, input[type="submit"] {
   background-color:#4C3000;
   background-image:-moz-linear-gradient(top, chocolate, #4C3000);
   background-image:-webkit-gradient(linear, center top, center bottom, from(chocolate), to(#4C3000));
@@ -47,20 +47,20 @@ input[type="submit"], input[type="reset"] {
 }
 input[type="reset"] { background-color:sandybrown; border:0 none }
 
-h1 + a:hover, h1 + a:focus, h1 + a:active, .actions a:hover, .actions a:focus, .actions a:active,
+a.create:hover, a.create:focus, a.create:active, .actions a:hover, .actions a:focus, .actions a:active,
 input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active,
 input[type="reset"]:hover, input[type="reset"]:focus, input[type="reset"]:active {
   background-color:chocolate;
   background-image:none;
 }
 
-h1 + a {
+a.create {
   font-size:1.4em;
-  display:block; width:7.6em;
+  display:block; width:7.44em;
   margin:2.6em 0 0 6.9em;
   padding:.45em 1em .55em;
 }
-h1 + a[href="/login"] { width:8.33em }
+a.create[href="/login"] { width:8.33em }
 
 nav a { color:#4C3000 }
 nav a:hover { text-decoration:underline }

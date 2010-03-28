@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
-  map.resources :todo_lists, :member => { :clear => :put }
+  map.resources :todo_lists, :member => { :clear => :put }, :collection => { :about => :get }
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
