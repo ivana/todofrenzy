@@ -17,7 +17,7 @@ h1, h2 { font-family:"Comic Sans MS", sans-serif }
 h1 {
   font-size:4.5em;
   text-shadow:1px 1px 5px #555;
-  position:absolute; top:2.85em; left:-1.2em;
+  position:absolute; top:3.4em; left:-1.8em;
   -moz-transform:rotate(90deg); -webkit-transform:rotate(90deg); transform:rotate(90deg);
   filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
@@ -64,7 +64,7 @@ h1 + a:active, input[type="submit"]:active, input[type="reset"]:active { positio
 
 /* lists */
 ol, ul { list-style-position: inside }
-body > ol, ol.actions { list-style:none }
+body > ol, ol.actions, nav ol { list-style:none }
 
 body > ol { margin:3em 0 0 8em }
   body > ol > li {
@@ -115,5 +115,12 @@ form#new_item { display:none; margin:1em 0 }
   form#new_item label { display:none }
   input#item_description { font-size:1.1em; width:80% }
   form#new_item input[type="submit"], form#new_item input[type="reset"] { margin-top:.5em }
+
+/* navigation */
+nav {
+  position:absolute; right:3em; top:1em;
+  text-align:right;
+  width:30%;
+}
 
 

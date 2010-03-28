@@ -2,21 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>All my lists</title>
+    <title>All my queues</title>
 
     <%= stylesheet_link_tag "style" %>
 
     <meta name="author" lang="hr" content="Ivana Vasilj, ivasilj@gmail.com">
     <!-- todo -->
-    <meta name="keywords" content="to do todo to-do frenzy list lists task tasks">
+    <meta name="keywords" content="to do todo to-do list lists task tasks queue queues">
     <meta name="description" content="">
   </head>
 
   <body>
-    <h1>All my lists</h1>
+    <h1>All my queues</h1>
 
     <a href="#">Create a new list</a>
-    
+
+    <nav>
+      <ol>
+        <li>
+          <% if logged_in? %>
+            <a href="/logout">Log out, @<%= current_user.username %></a>
+          <% else %>
+            <a href="/login">Sign in with Twitter</a>
+          <% end %>
+        </li>
+      </ol>
+    </nav>
+
     <% form_for @todo_list do |l| %>
       <div>
         <%= l.label(:name, 'List title:') %>
