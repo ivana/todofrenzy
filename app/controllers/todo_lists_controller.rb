@@ -1,7 +1,7 @@
 class TodoListsController < ApplicationController
 
   def index
-    @lists = TodoList.latest
+    @lists = TodoList.all_desc
     @todo_list = TodoList.new
     @item = Item.new
   end
