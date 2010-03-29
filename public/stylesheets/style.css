@@ -17,13 +17,14 @@ h1, h2 { font-family:"Comic Sans MS", sans-serif }
 h1 {
   font-size:4.5em;
   text-shadow:1px 1px 5px #555;
-  position:absolute; top:3.4em; left:-1.8em;
+  position:absolute; top:3.15em; left:-1.6em; letter-spacing:.1em;
   -moz-transform:rotate(90deg); -webkit-transform:rotate(90deg); transform:rotate(90deg);
   filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
 h2 {
   font-size:1.7em; font-style:italic;
-  text-decoration:underline; color:#4c3000;
+  color:#4c3000;
+  /*text-decoration:underline;*/
   /*margin-bottom:.1em;*/
   margin:-.2em 0 .4em; float:left; width:82%; /* properties when h2 is not editable */
 }

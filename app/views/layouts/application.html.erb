@@ -2,17 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>All my queues</title>
+    <title>Tudu Lista</title>
 
     <%= stylesheet_link_tag "style" %>
 
     <meta name="author" lang="hr" content="Ivana Vasilj, ivasilj@gmail.com">
-    <meta name="keywords" content="to do todo to-do list lists task tasks queue queues allmyqueues">
-    <meta name="description" content="(Yet another to-do list) View all your to-do queues at once.">
+    <meta name="keywords" content="tudulista todolist todolista lista tudu to do todo to-do list lists task tasks">
+    <meta name="description" content="Tudu Lista - view all your todos at once.">
   </head>
 
   <body>
-    <h1>All my queues</h1>
+    <h1>Tudu Lista</h1>
 
     <% if logged_in? %>
       <a href="#" class="create">Create a new list</a>
@@ -20,7 +20,8 @@
       <nav>
         <ol>
           <li><a href="/about">About</a></li>
-          <li><a href="/logout">Log out <strong>@<%= current_user.username %></strong></a></li>
+          <li><a href="/">Lists</a></li>
+          <li><a href="/logout">Sign out <strong>@<%= current_user.username %></strong></a></li>
         </ol>
       </nav>
 
