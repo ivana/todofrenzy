@@ -32,7 +32,7 @@ $(function(){
 
 
   $('a.del').live('click', function(){
-    if(confirm('Are you sure you want to delete this list? There is no undo.')){
+    if(confirm('Are you sure you want to delete this list?')){
 
       $.ajax({
         url: $(this).attr('href'),

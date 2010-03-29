@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
   map.logout 'logout', :controller => 'sessions', :action => 'logout'
+  map.about 'about', :controller => 'todo_lists', :action => 'about'
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
@@ -15,7 +16,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
-  map.resources :todo_lists, :member => { :clear => :put }, :collection => { :about => :get }
+  map.resources :todo_lists, :member => { :clear => :put }
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller

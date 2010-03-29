@@ -15,19 +15,22 @@
     <h1>All my queues</h1>
 
     <% if logged_in? %>
+      <a href="#" class="create">Create a new list</a>
+
       <nav>
         <ol>
           <li><a href="/about">About</a></li>
           <li><a href="/logout">Log out <strong>@<%= current_user.username %></strong></a></li>
         </ol>
       </nav>
+
+      <%= yield %>
+  
     <% else %>
       <a href="/login">Sign in with Twitter</a>
 
-      <%= render :action => 'todo_lists/about' %>
+      <%= render :file => 'todo_lists/about' %>  
     <% end %>
-
-    <%= yield %>
 
     <%= javascript_include_tag "jquery-1.4.2.min" %>
     <%= javascript_include_tag "todo-lists" %>
