@@ -15,12 +15,10 @@
     <h1>Tudu Lista</h1>
 
     <% if logged_in? %>
-      <a href="#" class="create">Create a new list</a>
-
       <nav>
         <ol>
           <li><a href="/about">About</a></li>
-          <li><a href="/">Lists</a></li>
+          <li><a href="/">My Lists</a></li>
           <li><a href="/logout">Sign out <strong>@<%= current_user.username %></strong></a></li>
         </ol>
       </nav>
@@ -28,7 +26,7 @@
       <%= yield %>
   
     <% else %>
-      <a href="/login">Sign in with Twitter</a>
+      <a href="/login" class="main">Sign in with Twitter</a>
 
       <%= render :file => 'todo_lists/about' %>  
     <% end %>
