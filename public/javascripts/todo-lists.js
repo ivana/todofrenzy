@@ -37,6 +37,7 @@ $(function(){
       $.ajax({
         url: $(this).attr('href'),
         type: 'DELETE',
+        data:'', // due to jQuery + Chrome love for PUT and DELETE
         success: function(data){
           var listId = data.todo_list.id;
 
@@ -59,6 +60,7 @@ $(function(){
     $.ajax({
       url: $(this).attr('href'),
       type: 'PUT',
+      data:'', // due to jQuery + Chrome love for PUT and DELETE
       success: function(data){
         $.each(data, function(index, value){
           $($('#item_' + value.item.id).parents('li')[0]).remove()
