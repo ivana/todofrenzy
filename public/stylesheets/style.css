@@ -1,4 +1,4 @@
-@font-face { font-family:ArtBrush; src:url("../fonts/AppSILR.ttf") }
+@font-face { font-family:"Apparatus SIL"; src:url("/fonts/AppSILR.ttf") }
 * {
   vertical-align:baseline;
   padding:0; margin:0;
@@ -18,9 +18,8 @@ h1 {
   font-size:4.5em; font-family:"Apparatus SIL", "Trebuchet MS", sans-serif;
   text-shadow:1px 1px 1px #555;
   position:absolute; top:3.5em; left:-1.9em; letter-spacing:.1em;
-
   transform:rotate(90deg); -moz-transform:rotate(90deg); -webkit-transform:rotate(90deg); -o-transform:rotate(90deg);
-  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
 h2 {
   font-size:1.7em; font-style:italic; font-family:"Comic Sans MS", sans-serif;
