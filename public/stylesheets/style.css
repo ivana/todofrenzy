@@ -18,7 +18,8 @@ h1 {
   font-size:4.5em; font-family:"Apparatus SIL", "Trebuchet MS", sans-serif;
   text-shadow:1px 1px 1px #555;
   position:absolute; top:3.5em; left:-1.9em; letter-spacing:.1em;
-  -moz-transform:rotate(90deg); -webkit-transform:rotate(90deg); transform:rotate(90deg);
+
+  transform:rotate(90deg); -moz-transform:rotate(90deg); -webkit-transform:rotate(90deg); -o-transform:rotate(90deg);
   filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
 h2 {
