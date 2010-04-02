@@ -1,4 +1,4 @@
-@font-face { font-family:"Apparatus SIL"; src:url("/fonts/AppSILR.ttf") }
+@font-face { font-family:"PT Sans"; src:url("/fonts/PT_Sans.ttf") }
 * {
   vertical-align:baseline;
   padding:0; margin:0;
@@ -8,18 +8,18 @@
 
 body {
   font:62.5% Arial, Helvetica, sans-serif;
-  margin:3em 0 0 3em;
   background:ivory; color:#4C3000;
+  margin:1em auto;
+  max-width:115em;
 }
   body > * { font-size:1.2em }
 
 /* headings */
 h1 {
-  font-size:4.5em; font-family:"Apparatus SIL", "Trebuchet MS", sans-serif;
-  text-shadow:1px 1px 1px #555;
-  position:absolute; top:3.5em; left:-1.9em; letter-spacing:.1em;
-  transform:rotate(90deg); -moz-transform:rotate(90deg); -webkit-transform:rotate(90deg); -o-transform:rotate(90deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  font-size:4.5em; font-family:"PT Sans", "Trebuchet MS", sans-serif;
+  text-shadow:1px 0 1px #555;
+  margin:0 0 .7em .6em;
+  float:left;
 }
 h2 {
   font-size:1.7em; font-style:italic; font-family:"Comic Sans MS", sans-serif;
@@ -44,10 +44,11 @@ input[type="reset"] { padding:.2em .4em; background:sandybrown; border:0 none }
 a.main {
   font-size:1.4em;
   display:block; width:7.6em;
-  margin:2.6em 0 0 6.9em;
   padding:.45em 1em .55em;
+  margin-left:1.9em;
   background:#4C3000;
   box-shadow:1px 0 2px #555; -moz-box-shadow:1px 0 2px #555; -webkit-box-shadow:1px 0 2px #555;
+  clear:left;
 }
 a.main:hover, a.main:focus, a.main:active { background:chocolate }
 a.main[href="/login"] { width:8.5em }
@@ -82,12 +83,13 @@ nav li {
 }
 nav li:first-child { border-left:0 none }
 
-body > ol { margin:3em 0 0 8em }
+body > ol { margin-top:4em }
   body > ol > li {
     border:1px solid wheat; background:papayawhip;
     border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
     box-shadow:1px -1px 3px #555; -moz-box-shadow:1px -1px 3px #555; -webkit-box-shadow:1px -1px 3px #555;
-    margin:0 2.4em 1em 0; padding:1em; width:19em; 
+    margin:0 0 1em 2.2em;
+    padding:1em; width:19em;
     float:left;
   }
 /*
@@ -116,7 +118,12 @@ input[type="text"]:focus {
   outline:0;
 }
 
-form#new_todo_list { margin-left:8em; padding:.55em 0 .45em; display:none }
+form#new_todo_list {
+  display:none;
+  padding:.25em 0 .2em;
+  margin-left:2em;
+  clear:left;
+}
   form#new_todo_list label, #new_todo_list input { vertical-align:middle }
   form#new_todo_list label { font-size:1.2em }
   input#todo_list_name { font-size:1.4em; margin:0 .2em }
@@ -128,9 +135,9 @@ form#new_item { display:none; margin:1em 0 }
 
 /* navigation */
 nav {
-  position:absolute; right:3em; top:1em;
   text-align:right;
-  width:30%;
+  display:block;
+  margin-right:2em;
 }
 
 /* about */
