@@ -85,7 +85,7 @@ body > ol { margin-top:4em }
   body > ol > li {
     border:1px solid wheat; background:papayawhip;
     border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
-    box-shadow:1px -1px 3px #555; -moz-box-shadow:1px -1px 3px #555; -webkit-box-shadow:1px -1px 3px #555;
+    box-shadow:rgba(120, 120, 120, .3) 1px 1px 3px; -moz-box-shadow:rgba(120, 120, 120, .3) 1px 1px 3px; -webkit-box-shadow:rgba(120, 120, 120, .3) 1px 1px 3px;
     margin:0 0 1em 2.2em;
     padding:1em; width:19em;
     float:left;
