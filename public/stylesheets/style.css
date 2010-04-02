@@ -16,7 +16,7 @@ body {
 /* headings */
 h1 {
   font-size:4.5em; font-family:"Trebuchet MS", sans-serif;
-  margin:0 0 .3em .5em;
+  margin:0 0 -1em .5em;
   float:left;
 }
 h2 {
@@ -42,12 +42,12 @@ a.main {
   font-size:1.4em;
   display:block; width:7.6em;
   padding:.45em 1em .55em;
-  margin-left:1.9em;
-  background:#4C3000;
+  margin:0 auto;
+  background:chocolate;
   box-shadow:1px 0 2px #555; -moz-box-shadow:1px 0 2px #555; -webkit-box-shadow:1px 0 2px #555;
   clear:left;
 }
-a.main:hover, a.main:focus, a.main:active { background:chocolate }
+a.main:hover, a.main:focus, a.main:active { background:#4c3000 }
 a.main[href="/login"] { width:8.5em }
 a.main[href="/"] { width:8.8em }
 
@@ -113,12 +113,12 @@ input[type="text"]:focus {
 form#new_todo_list {
   display:none;
   padding:.25em 0 .2em;
-  margin-left:2em;
+  margin:0 auto; width:37em; 
   clear:left;
 }
   form#new_todo_list label, #new_todo_list input { vertical-align:middle }
-  form#new_todo_list label { font-size:1.2em }
-  input#todo_list_name { font-size:1.4em; margin:0 .2em }
+  form#new_todo_list label { font-size:1.2em; visibility:hidden }
+  input#todo_list_name { font-size:1.4em; margin:0 .2em; width:15em }
 
 form#new_item { display:none; margin:1em 0 }
   form#new_item label { display:none }
