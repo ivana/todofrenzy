@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>todas listas</title>
+    <title>Todas Listas</title>
 
     <%= stylesheet_link_tag "style" %>
     <link rel="icon" type="image/png" href="/images/favicon.png">
@@ -13,7 +13,8 @@
   </head>
 
   <body>
-    <h1>todas listas</h1>
+    <header>
+      <h1><img src="/images/logo.png" alt="Todas Listas"></h1>
 
     <% if logged_in? %>
       <nav>
@@ -24,12 +25,16 @@
         </ol>
       </nav>
 
-      <%= yield %>
+    </header>
+
+    <%= yield %>
   
     <% else %>
-      <a href="/login" class="main">Sign in with Twitter</a>
+    </header>
 
-      <%= render :file => 'todo_lists/about' %>  
+    <a href="/login" class="main">Sign in with Twitter</a>
+
+    <%= render :file => 'todo_lists/about' %>  
     <% end %>
 
     <%= javascript_include_tag "jquery-1.4.2.min" %>

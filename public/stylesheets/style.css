@@ -22,9 +22,8 @@ h1 {
 h2 {
   font:italic 500 1.8em/1.1 didot, "times new roman", georgia, sans-serif;
   color:#4c3000;
-  /*text-decoration:underline;*/
-  /*margin-bottom:.1em;*/
-  float:left; margin:-.2em 0 .4em; width:82%; /* properties when h2 is not editable */
+  margin:-.2em 0 .4em; width:82%;
+  float:left;
 }
 
 /* anchors, buttons */
@@ -85,24 +84,19 @@ body > ol { margin-top:4em }
   body > ol > li {
     border:1px solid wheat; background:papayawhip;
     border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
-    box-shadow:rgba(120, 120, 120, .3) 1px 1px 3px; -moz-box-shadow:rgba(120, 120, 120, .3) 1px 1px 3px; -webkit-box-shadow:rgba(120, 120, 120, .3) 1px 1px 3px;
+    box-shadow:1px -1px 3px rgba(120, 120, 120, 0.5);
+    -moz-box-shadow:1px -1px 3px rgba(120, 120, 120, 0.5);
+    -webkit-box-shadow:1px -1px 3px rgba(120, 120, 120, 0.5);
     margin:0 0 1em 2.2em;
     padding:1em; width:19em;
     float:left;
   }
-/*
-    li[id^="todo_list"] > a {
-      margin:-.2em 0 .1em;
-      float:left; width:86%;
-    }
-      li[id^="todo_list"] > a span { color:tan; visibility:hidden }
-*/
 
 ol.actions { float:right; width:12%; margin-left:1em }
 
 ul.items {
   list-style:none;
-  line-height:1.5em;
+  line-height:1.7em;
   clear:left;
 }
 .done { text-decoration:line-through }
