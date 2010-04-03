@@ -20,7 +20,7 @@ h1 {
   float:left;
 }
 h2 {
-  font:italic 500 1.8em/1.1 didot, "times new roman", georgia, sans-serif;
+  font:italic 600 1.8em/1.1 didot, "times new roman", georgia, sans-serif;
   color:#4c3000;
   margin:-.2em 0 .4em; width:82%;
   float:left;
@@ -40,7 +40,7 @@ input[type="reset"] { padding:.2em .4em; background:sandybrown; border:0 none }
 
 a.main {
   font-size:1.4em;
-  display:block; width:7.6em;
+  display:block; text-align:center; width:8em;
   padding:.45em 1em .55em;
   margin:0 auto;
   background:chocolate;
@@ -49,7 +49,7 @@ a.main {
 }
 a.main:hover, a.main:focus, a.main:active { background:#4c3000 }
 a.main[href="/login"] { width:8.5em }
-a.main[href="/"] { width:8.8em }
+a.main[href="/"] { width:9em }
 
 .actions a {
   display:block; height:27px; width:27px;
@@ -99,9 +99,6 @@ ul.items {
   line-height:1.7em;
   clear:left;
 }
-.done { text-decoration:line-through }
-.high { font-weight:bold }
-.low { font-size:.9em }
 
 /* forms */
 input[type="text"] { border:2px solid chocolate }
@@ -113,12 +110,12 @@ input[type="text"]:focus {
 form#new_todo_list {
   display:none;
   padding:.25em 0 .2em;
-  margin:0 auto; width:37em; 
+  margin:0 auto; width:34em; 
   clear:left;
 }
   form#new_todo_list label, #new_todo_list input { vertical-align:middle }
   form#new_todo_list label { font-size:1.2em; visibility:hidden }
-  input#todo_list_name { font-size:1.4em; margin:0 .2em; width:15em }
+  input#todo_list_name { font-size:1.4em; margin:0 .2em; width:12em }
 
 form#new_item { display:none; margin:1em 0 }
   form#new_item label { display:none }
