@@ -20,7 +20,7 @@ h1 {
   float:left;
 }
 h2 {
-  font:italic 500 1.8em/1.1 didot, "times new roman", georgia, sans-serif;
+  font:italic 500 1.8em/1.1 didot, "times new roman", georgia, serif;
   color:#4c3000;
   margin:-.2em 0 .4em; width:82%;
   float:left;
