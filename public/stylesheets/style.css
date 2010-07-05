@@ -133,6 +133,7 @@ nav {
 /* about */
 #about h2 { float:none }
 #about ul { list-style:disc inside }
+#about .vcard ul { line-height:1.3em; list-style-position:outside; margin:.5em 0 0 1em }
 #about p { margin-top:.5em }
 #about a { text-decoration:underline }
 #about a:hover { text-decoration:none }
