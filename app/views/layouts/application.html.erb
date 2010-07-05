@@ -37,7 +37,10 @@
     <% else %>
     </header>
 
-    <a href="/login" class="main">Sign in with Twitter</a>
+    <ul class="main">
+      <li><a href="/login">Sign in with Twitter</a></li>
+      <li><a href="/fblogin">Sign in with Facebook</a></li>
+    </ul>
 
     <%= render :file => 'todo_lists/about' %>  
     <% end %>
