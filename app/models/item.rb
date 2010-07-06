@@ -4,6 +4,8 @@ class Item < ActiveRecord::Base
   before_validation :set_default_priority, :on => :create
   validates_presence_of :description, :priority, :todo_list_id
   validates_inclusion_of :priority, :in => %w(low normal high)
+  
+  scope :done, :conditions => { :done => true }
 
   protected
 

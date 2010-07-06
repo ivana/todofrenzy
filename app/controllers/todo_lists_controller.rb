@@ -18,8 +18,15 @@ class TodoListsController < ApplicationController
     render :json => TodoList.find(params[:id]).destroy
   end
 
-  def clear # clear done items
-    render :json => Item.destroy_all(:done => true, :todo_list_id => params[:id])
+  # clear done items
+  def clear
+    todo_list = TodoList.find params[:id]
+    # FIXME: replace this with `destroy_all` once it's fixed in Rails
+    done_items = todo_list.items.done
+    items = done_items.all(:select => :id)
+    done_items.delete_all
+    
+    render :json => items
   end
 
   def about
