@@ -1,21 +1,21 @@
 class TodoListsController < ApplicationController
 
   def index
-    @lists = TodoList.find_all_by_user_id logged_in? ? current_user.id : 0, { :order => 'created_at DESC' }
-    @todo_list = TodoList.new
-    @item = Item.new
+    @lists = current_user.todo_lists.latest
+    @todo_list = current_user.todo_lists.new
+    @item = @todo_list.items.new
   end
 
   def create
-    @list = TodoList.create(params[:todo_list]) do |list|
-      list.user_id = current_user.id
-    end
+    @list = current_user.todo_lists.create! params[:todo_list]
     
     render :partial => 'todo_list', :locals => { :list => @list }
   end
 
   def destroy
-    render :json => TodoList.find(params[:id]).destroy
+    todo_list = current_user.todo_lists.find params[:id]
+    todo_list.destroy
+    render :json => todo_list
   end
 
   # clear done items
