@@ -1,9 +1,13 @@
 class TodoListsController < ApplicationController
 
   def index
-    @lists = current_user.todo_lists.latest
-    @todo_list = current_user.todo_lists.new
-    @item = @todo_list.items.new
+    if logged_in?
+      @lists = current_user.todo_lists.latest
+      @todo_list = current_user.todo_lists.new
+      @item = @todo_list.items.new
+    else
+      render :about
+    end
   end
 
   def create

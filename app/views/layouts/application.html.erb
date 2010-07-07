@@ -29,22 +29,18 @@
           <li><a href="/logout">Sign out <strong>@<%= current_user.username %></strong></a></li>
         </ol>
       </nav>
-
+    <% end %>
     </header>
-
-    <%= yield %>
-  
-    <% else %>
-    </header>
-
+    
+    <% unless logged_in? %>
     <ul class="main">
       <li><a href="/login">Sign in with Twitter</a></li>
       <li><a href="/fblogin">Sign in with Facebook</a></li>
     </ul>
-
-    <%= render :file => 'todo_lists/about' %>  
     <% end %>
 
+    <%= yield %>
+  
     <%= javascript_include_tag "jquery-1.4.2.min", "rails", "todo-lists", "items", :cache => true %>
 
     <script type="text/javascript">
