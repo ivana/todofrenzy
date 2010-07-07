@@ -1,11 +1,8 @@
 <li>
-  <% form_tag({:controller => 'items'}, {:id => dom_id(item)} ) do %>
+  <%= form_for item do |i| %>
     <div>
-
-      <%= check_box_tag 'done', true, item.done, :id => "#{dom_id(item)}_done" %>
-      <%= label_tag "#{dom_id(item)}_done", item.description, :class => item.done ? 'done' : '' %>
-
-      <input type="hidden" name="id" value="<%= item.id %>">
+      <%= i.check_box :done %>
+      <%= i.label :done, item.description, :class => item.done ? 'done' : '' %>
     </div>
   <% end %>
 </li>
