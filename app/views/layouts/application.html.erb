@@ -45,9 +45,7 @@
     <%= render :file => 'todo_lists/about' %>  
     <% end %>
 
-    <%= javascript_include_tag "jquery-1.4.2.min" %>
-    <%= javascript_include_tag "todo-lists" %>
-    <%= javascript_include_tag "items" %>
+    <%= javascript_include_tag "jquery-1.4.2.min", "rails", "todo-lists", "items", :cache => true %>
 
     <script type="text/javascript">
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
