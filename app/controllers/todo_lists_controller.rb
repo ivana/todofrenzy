@@ -24,10 +24,10 @@ class TodoListsController < ApplicationController
 
   # clear done items
   def clear
-    todo_list = TodoList.find params[:id]
+    todo_list = current_user.todo_lists.find params[:id]
     done_items = todo_list.items.done.destroy_all
     
-    render :json => items
+    render :json => done_items
   end
 
   def about
