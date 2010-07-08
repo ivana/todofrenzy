@@ -57,7 +57,7 @@ $(function(){
   $.fn.showNewItemForm = function(){
     $('form#new_item').insertBefore(this.find('.items')).show();
     this.focusItemInput();
-    this.find('#todo_list_id').val(this.domId());
+    this.find('input#todo_list_id').val(this.domId());
   };
 
   $.fn.focusItemInput = function(){

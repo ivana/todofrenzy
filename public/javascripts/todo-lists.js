@@ -24,9 +24,8 @@ $(function(){
       $(this).attr('action'),
       $(this).serialize(),
       function(data){
-        $('body > ol').prepend(data);
+        $('body > ol').prepend(data).children().first().showNewItemForm();
         hideListForm();
-        $(data).showNewItemForm();
       }
     );
 
