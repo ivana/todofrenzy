@@ -30,6 +30,11 @@ $(function(){
     return false;
   }); // save new list
 
+  $('form#new_todo_list').live('keyup', function(e){
+    // dismiss dynamic form on ESCAPE key
+    if (e.which == 27) toggleNewListFormElements();
+  });
+
 
   $('a.del').live('click', function(){
     if(confirm('Are you sure you want to delete this list? There is no undo!')){
