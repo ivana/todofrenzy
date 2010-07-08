@@ -1,21 +1,19 @@
 $(function(){
 
   $('a.new-item').live('click', function(){
-    var listId = $(this).parents('li[id^=todo_list_]').attr('id').match(/\d+$/)[0];
-    showNewItemForm(listId);
+    $(this).parents('.todo_list').showNewItemForm();
     return false;
   }); // show new item form
 
-
   $('form#new_item').live('submit', function(){
-    var listId = $(this).find('#item_todo_list_id').attr('value');
+    var list = $(this).parents('.todo_list');
 
     $.post(
       $(this).attr('action'),
       $(this).serialize(),
       function(data){
-        $('#todo_list_' + listId + ' .items').append(data);
-        $('input#item_description').val('').focus();
+        list.find('.items').append(data);
+        list.focusItemInput();
       }
     );
 
@@ -56,14 +54,18 @@ $(function(){
 
   /* helper functions */
 
-  var showNewItemForm = function(listId){
-    $('form#new_item').show().insertBefore('#todo_list_' + listId + ' .items');
-    $('#item_todo_list_id').val(listId);
-    $('input#item_description').val('').focus();
+  $.fn.showNewItemForm = function(){
+    $('form#new_item').insertBefore(this.find('.items')).show();
+    this.focusItemInput();
+    this.find('#todo_list_id').val(this.domId());
   };
 
-  $.extend({
-    showNewItemForm: showNewItemForm
-  });
+  $.fn.focusItemInput = function(){
+    this.find('input#item_description').val('').focus();
+  };
+  
+  $.fn.domId = function(){
+    return this.attr('id').match(/\d+$/)[0];
+  };
 
 });

@@ -1,5 +1,4 @@
-<li id="<%= dom_id(list) %>">
-
+<%= content_tag_for :li, list do %>
   <h2><%= list.name %></h2>
 
   <ol class="actions">
@@ -11,5 +10,4 @@
   <ul class="items">
     <%= render :partial => 'items/item', :collection => list.items %>
   </ul>
-
-</li>
+<% end %>

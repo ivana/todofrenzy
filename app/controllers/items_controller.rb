@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
 
   def create
-    @item = Item.create params[:item]
-    render @item
+    todo_list = current_user.todo_lists.find params[:todo_list_id]
+    item = todo_list.items.create! params[:item]
+    render item
   end
 
   def update

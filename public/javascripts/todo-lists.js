@@ -25,10 +25,8 @@ $(function(){
       $(this).serialize(),
       function(data){
         $('body > ol').prepend(data);
-        var listId = $(data).attr('id').match(/\d+$/)[0];
-
         hideListForm();
-        $.showNewItemForm(listId);
+        $(data).showNewItemForm();
       }
     );
 
