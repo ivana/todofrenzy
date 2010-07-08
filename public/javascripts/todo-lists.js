@@ -1,14 +1,19 @@
 $(function(){
 
   $('a.create').live('click', function(){
-    toggleNewListFormElements();
-    $('input#todo_list_name').focus();
+    showListForm();
     return false;
   }); // show new list form
 
+  $(document).keypress(function(e){
+    if (e.which == 65 && $(e.target).parents('form:not(:hidden)').size() == 0) {
+      showListForm();
+      return false;
+    }
+  });
 
   $('form#new_todo_list input[type="reset"]').live('click', function(){
-    toggleNewListFormElements();
+    hideListForm();
     return false;
   }); // cancel new list creation
 
@@ -22,7 +27,7 @@ $(function(){
         $('body > ol').prepend(data);
         var listId = $(data).attr('id').match(/\d+$/)[0];
 
-        toggleNewListFormElements();
+        hideListForm();
         $.showNewItemForm(listId);
       }
     );
@@ -32,7 +37,7 @@ $(function(){
 
   $('form#new_todo_list').live('keyup', function(e){
     // dismiss dynamic form on ESCAPE key
-    if (e.which == 27) toggleNewListFormElements();
+    if (e.which == 27) hideListForm();
   });
 
 
@@ -79,10 +84,17 @@ $(function(){
 
   /* helper functions */
   
-  var toggleNewListFormElements = function(){
-    $('input#todo_list_name').val('');
-    $('form#new_todo_list').toggle(); // there could be some troubles with jQuery toggle in IE
-    $('a.create').toggle();
-  }; // toggle form and button - show one, hide another
+  function showListForm() {
+    var form = $('form#new_todo_list');
+    if (form.is(":hidden")) {
+      form.show().find('input#todo_list_name').val('').focus();
+      $('a.create').hide();
+    }
+  }
+  
+  function hideListForm() {
+    $('form#new_todo_list').hide();
+    $('a.create').show();
+  }
 
 });
