@@ -17,7 +17,8 @@ class TodoListsController < ApplicationController
   end
 
   def destroy
-    todo_list = current_user.todo_lists.destroy params[:id]
+    todo_list = current_user.todo_lists.find params[:id]
+    todo_list.destroy
     
     render :json => todo_list
   end
