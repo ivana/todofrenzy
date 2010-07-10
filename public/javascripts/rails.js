@@ -22,10 +22,10 @@ jQuery(function ($) {
          * Handles execution of remote calls firing overridable events along the way
          */
         callRemote: function () {
-            var el      = this,
-                method  = el.attr('method') || el.attr('data-method') || 'GET',
-                url     = el.attr('action') || el.attr('href'),
-                dataType  = el.attr('data-type')  || 'script';
+            var el       = this,
+                method   = el.attr('method') || el.attr('data-method') || 'GET',
+                url      = el.attr('action') || el.attr('href'),
+                dataType = el.attr('data-type');
 
             if (url === undefined) {
               throw "No URL specified for remote call (action or href must be present).";
