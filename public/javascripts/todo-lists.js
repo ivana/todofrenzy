@@ -17,19 +17,9 @@ $(function(){
     return false;
   }); // cancel new list creation
 
-
-  $('form#new_todo_list').live('submit', function(){
-
-    $.post(
-      $(this).attr('action'),
-      $(this).serialize(),
-      function(data){
-        $('body > ol').prepend(data).children().first().showNewItemForm();
-        hideListForm();
-      }
-    );
-
-    return false;
+  $('form#new_todo_list').live('ajax:success', function(event, data){
+    $('body > ol').prepend(data).children().first().showNewItemForm();
+    hideListForm();
   }); // save new list
 
   $('form#new_todo_list').live('keyup', function(e){

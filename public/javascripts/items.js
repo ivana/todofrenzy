@@ -5,19 +5,10 @@ $(function(){
     return false;
   }); // show new item form
 
-  $('form#new_item').live('submit', function(){
-    var list = $(this).parents('.todo_list');
-
-    $.post(
-      $(this).attr('action'),
-      $(this).serialize(),
-      function(data){
-        list.find('.items').append(data);
-        list.focusItemInput();
-      }
-    );
-
-    return false;
+  $('form#new_item').live('ajax:success', function(event, data){
+    var list = $(this).closest('.todo_list');
+    list.find('.items').append(data);
+    list.focusItemInput();
   }); // add new item
   
   $('form#new_item').live('keyup', function(e){
