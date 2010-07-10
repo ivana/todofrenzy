@@ -65,14 +65,14 @@ a.main[href="/"] { width:9em }
   background-color:#F7D7B4;
   margin-bottom:2px;
 }
+.actions a.new-item { color:#4c3000; font-size:1.7em; line-height:1.4em }
+.actions a[data-method=delete] { color:chocolate }
+.actions a[data-method=put] { color:goldenrod }
 .actions a:hover, .actions a:focus, .actions a:active,
 input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active,
 input[type="reset"]:hover, input[type="reset"]:focus, input[type="reset"]:active {
   background:#4c3000; color:ivory;
 }
-a.new-item { color:#4c3000; font-size:1.7em; line-height:1.4em }
-a.clear { color:chocolate }
-a.del { color:goldenrod }
 
 nav a, #about a { color:#4C3000 }
 nav a:hover, #about a:hover { text-decoration:underline }

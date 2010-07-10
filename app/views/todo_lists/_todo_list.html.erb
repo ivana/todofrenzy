@@ -3,8 +3,10 @@
 
   <ol class="actions">
     <li><a class="new-item" href="#" title="New item">+</a></li>
-    <li><%= link_to mac?? '✗' : 'x', todo_list_path(:id => list.id), :class => 'del', :title => 'Delete list' %></li>
-    <li><%= link_to mac?? '✓' : ':)', clear_todo_list_path(list), :class => 'clear', :title => 'Clear done items' %></li>
+    <li><%= link_to mac?? '✗' : 'x', list, :remote => true, :method => 'delete',
+      :title => 'Delete list', :confirm => 'Are you sure you want to delete this list? There is no undo!' %></li>
+    <li><%= link_to mac?? '✓' : ':)', clear_todo_list_path(list), :remote => true, :method => 'put',
+      :title => 'Clear done items' %></li>
   </ol>
 
   <ul class="items">

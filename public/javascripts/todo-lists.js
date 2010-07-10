@@ -27,47 +27,18 @@ $(function(){
     if (e.which == 27) hideListForm();
   });
 
+  $('.actions a[data-method=delete]').live('ajax:success', function(event, data){
+    var list = $(this).closest('.todo_list');
+    // safety check: is there a new item form inside? we don't want it to be destroyed with list
+    $('form#new_todo_list').after(list.find('form#new_item').hide());
+    list.remove();
+  });
 
-  $('a.del').live('click', function(){
-    if(confirm('Are you sure you want to delete this list? There is no undo!')){
-
-      $.ajax({
-        url: $(this).attr('href'),
-        type: 'DELETE',
-        data:'', // due to jQuery + Chrome love for PUT and DELETE
-        success: function(data){
-          var listId = data.todo_list.id;
-
-          // safety check: is there a new item form inside? we don't want it to be destroyed with list
-          if($('#todo_list_' + listId + ' form#new_item').length){
-            $('form#new_todo_list').after($('form#new_item').hide());
-          }
-
-          $('#todo_list_' + listId).remove();
-        }
-      });
-    }
-    
-    return false;
-  }); // delete list
-
-
-  $('a.clear').live('click', function(){
-
-    $.ajax({
-      url: $(this).attr('href'),
-      type: 'PUT',
-      data:'', // due to jQuery + Chrome love for PUT and DELETE
-      success: function(data){
-        $.each(data, function(index, value){
-          $($('#item_' + value.item.id).parents('li')[0]).remove()
-        });
-      }
+  $('.actions a[href$="/clear"]').live('ajax:success', function(event, data){
+    $.each(data, function(index, value){
+      $('#item_' + value.item.id).remove()
     });
-
-    return false;
   }); // clear done items
-
 
   /* helper functions */
   

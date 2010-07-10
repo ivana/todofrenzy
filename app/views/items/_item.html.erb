@@ -1,8 +1,8 @@
-<li>
+<%= content_tag_for :li, item do %>
   <%= form_for item, :index => item.id, :remote => true do |i| %>
     <div>
       <%= i.check_box :done %>
       <%= i.label :done, item.description, :class => item.done ? 'done' : '' %>
     </div>
   <% end %>
-</li>
+<% end %>
