@@ -30,24 +30,19 @@ $(function(){
   }); // close add new item form
 
   $('form.edit_item input[type="checkbox"]').live('change', function(){
-    var form = $(this).parents('form');
-
-    $.ajax({
-      url: form.attr('action'),
-      type: 'PUT',
-      data: form.serialize(),
-      success: function(data){
-        if(data.item.done){
-          $('#' + formId + ' label').addClass('done');
-          $($('#' + formId).parents('ul.items')[0]).append($('#' + formId).parents('li')[0]); // move to bottom of the list
-        } else {
-          $('#' + formId + ' label').removeClass('done');
-          $($('#' + formId).parents('ul.items')[0]).prepend($('#' + formId).parents('li')[0]); // move to top of the list
-        }
-      }
-    });
-  }); // item checked
-
+    $(this).parents('form').submit();
+  });
+  
+  $('form.edit_item').live('ajax:success', function(event, data){
+    var form = $(this), item = form.closest('li'), label = form.find('label');
+    if (data.item.done) {
+      label.addClass('done');
+      item.appendTo(item.parent());
+    } else {
+      label.removeClass('done');
+      item.prependTo(item.parent());
+    }
+  });
 
   /* helper functions */
 
