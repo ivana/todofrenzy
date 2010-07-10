@@ -1,5 +1,5 @@
 <li>
-  <%= form_for item do |i| %>
+  <%= form_for item, :index => item.id do |i| %>
     <div>
       <%= i.check_box :done %>
       <%= i.label :done, item.description, :class => item.done ? 'done' : '' %>

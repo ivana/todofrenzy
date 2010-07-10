@@ -29,15 +29,13 @@ $(function(){
     $('form#new_todo_list').after($('form#new_item').hide());
   }); // close add new item form
 
-  $('input[type="checkbox"][id^="item"]').live('click', function(){
-    var id = $(this).attr('id').match(/\d+/)[0];
-    var url = $(this).parents('form').attr('action') + '/' + id;
-    var formId = $(this).parents('form').attr('id');
+  $('form.edit_item input[type="checkbox"]').live('change', function(){
+    var form = $(this).parents('form');
 
     $.ajax({
-      url: url,
+      url: form.attr('action'),
       type: 'PUT',
-      data: $('#' + formId).serialize(),
+      data: form.serialize(),
       success: function(data){
         if(data.item.done){
           $('#' + formId + ' label').addClass('done');
@@ -48,7 +46,6 @@ $(function(){
         }
       }
     });
-    
   }); // item checked
 
 
