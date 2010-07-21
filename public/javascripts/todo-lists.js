@@ -12,7 +12,7 @@ $(function(){
     }
   });
 
-  $('form#new_todo_list input[type="reset"]').live('click', function(){
+  $('form#new_todo_list input[type="button"]').live('click', function(){
     hideListForm();
     return false;
   }); // cancel new list creation

@@ -29,14 +29,14 @@ h2 {
 /* anchors, buttons */
 a { text-decoration:none }
 
-.actions a, a.main, .main a, input[type="submit"], input[type="reset"] {
+.actions a, a.main, .main a, input[type="submit"], input[type="button"] {
   color:ivory;
   border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
 }
 
-input[type="submit"], input[type="reset"] { font-size:1em; cursor:pointer }
+input[type="submit"], input[type="button"] { font-size:1em; cursor:pointer }
 input[type="submit"] { padding:.3em .5em; background:chocolate; border:0 none }
-input[type="reset"] { padding:.2em .4em; background:sandybrown; border:0 none }
+input[type="button"] { padding:.2em .4em; background:sandybrown; border:0 none }
 
 a.main, ul.main {
   margin:0 auto;
@@ -70,7 +70,7 @@ a.main[href="/"] { width:9em }
 .actions a[data-method=put] { color:goldenrod }
 .actions a:hover, .actions a:focus, .actions a:active,
 input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active,
-input[type="reset"]:hover, input[type="reset"]:focus, input[type="reset"]:active {
+input[type="button"]:hover, input[type="button"]:focus, input[type="button"]:active {
   background:#4c3000; color:ivory;
 }
 
@@ -128,7 +128,7 @@ form#new_todo_list {
 form#new_item { display:none; margin:1em 0 }
   form#new_item label { display:none }
   input#item_description { font-size:1.1em; width:80% }
-  form#new_item input[type="submit"], form#new_item input[type="reset"] { margin-top:.5em }
+  form#new_item input[type="submit"], form#new_item input[type="button"] { margin-top:.5em }
 
 /* navigation */
 nav {

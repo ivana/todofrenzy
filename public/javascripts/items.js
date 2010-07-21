@@ -16,7 +16,7 @@ $(function(){
     if (e.which == 27) $(this).hide();
   });
 
-  $('form#new_item input[type="reset"]').live('click', function(){
+  $('form#new_item input[type="button"]').live('click', function(){
     $('form#new_todo_list').after($('form#new_item').hide());
   }); // close add new item form
 
