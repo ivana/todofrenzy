@@ -21,18 +21,22 @@ $(function(){
   }); // close add new item form
 
   $('form.edit_item input[type="checkbox"]').live('change', function(){
-    $(this).parents('form').submit();
-  });
-  
-  $('form.edit_item').live('ajax:success', function(event, data){
-    var form = $(this), item = form.closest('li'), label = form.find('label');
-    if (data.item.done) {
-      label.addClass('done');
-      item.appendTo(item.parent());
-    } else {
-      label.removeClass('done');
-      item.prependTo(item.parent());
-    }
+    var form = $(this).parents('form'), item = form.closest('li'), label = form.find('label');
+    
+    $.ajax({
+      url: $(this).parents('form').attr('action'),
+      type: 'PUT',
+      data: $(this).parents('form').serialize(),
+      success: function(data){
+        if (data.item.done) {
+          label.addClass('done');
+          item.appendTo(item.parent());
+        } else {
+          label.removeClass('done');
+          item.prependTo(item.parent());
+        }
+      }
+    });
   });
 
   /* helper functions */
