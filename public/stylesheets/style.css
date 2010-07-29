@@ -144,3 +144,23 @@ nav {
 #about p { margin-top:.5em }
 #about a { text-decoration:underline }
 #about a:hover { text-decoration:none }
+
+/* iPhone */
+@media all and (max-device-width:480px) {
+  
+  body { font-size:100%; margin:0 }
+    body > * { font-size:2em; line-height:1.5em }
+    
+    body > ol { margin-top:2em }
+      body > ol > li { float:none; width:86%; margin:1em auto }
+  
+  h1 { float:none; margin:0 }
+    h1 img { width:98%; margin-left:2% }
+  h2 { font-size:1.9em }
+  
+  ul.main { width:100% }
+  ul.main a { display:block; font-size:1.3em }
+  .main a[href="/login"], .main a[href="/fblogin"] { width:85%; margin:.5em auto }
+  
+  #about a { text-decoration:none; font-weight:bold }
+}
