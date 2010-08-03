@@ -61,7 +61,7 @@ a.main:hover, a.main:focus, a.main:active, .main a:hover, .main a:focus, .main a
 a.main[href="/"] { width:9em }
 
 .actions a {
-  display:block; height:27px; width:27px;
+  display:block;
   line-height:1.6em; text-align:center;
   font-size:1.4em; text-decoration:none;
   background-color:#F7D7B4;
@@ -171,4 +171,16 @@ nav {
   a.main, a.main[href="/"] { width:85%; font-size:2.65em; padding:.25em 1em .35em; margin-top:-1em }
   
   #about a { text-decoration:none; font-weight:bold }
+  
+  .todo_list { overflow:hidden }
+  .actions a { font-size:2em }
+  .actions a.new-item { font-size:2.2em }
+  
+  form#new_todo_list { margin:0; padding:0 }
+    form#new_todo_list label { display:none }
+    input#todo_list_name { width:10.5em; margin-left:.8em }
+  form.edit_item { font-size:1.4em; line-height:1.5em }
+    form.edit_item label { vertical-align:top }
+    .done { text-decoration:none }
+    form.edit_item input[type="checkbox"] { width:3.5em; height:3.5em }
 }
