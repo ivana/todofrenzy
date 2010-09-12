@@ -2,6 +2,4 @@ development:
   twitter:
     consumer_key: KEY
     secret: SECRET
-  facebook:
-    app_id: APPID
-    secret: SECRET
+    

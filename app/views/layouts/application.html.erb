@@ -30,10 +30,7 @@
     </header>
     
     <% unless logged_in? %>
-    <ul class="main">
-      <li><a href="/login">Sign in with Twitter</a></li>
-      <li><a href="/fblogin">Sign in with Facebook</a></li>
-    </ul>
+      <a class="main" href="/login">Sign in with Twitter</a>
     <% end %>
 
     <%= yield %>

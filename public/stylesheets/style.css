@@ -56,8 +56,8 @@ a.main { font-size:1.4em; display:block; width:8em }
 ul.main a { font-size:1.17em; display:inline-block; margin-left:1.55em }
 
 a.main:hover, a.main:focus, a.main:active, .main a:hover, .main a:focus, .main a:active { background:#4c3000 }
-.main a[href="/login"] { width:8.5em }
-.main a[href="/fblogin"] { width:10em }
+a[href="/login"] { width:8.5em }
+a[href="/fblogin"] { width:10em }
 a.main[href="/"] { width:9em }
 
 .actions a {
