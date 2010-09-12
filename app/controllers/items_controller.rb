@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = current_user.items.find params[:id]
+    item = current_user.items.find(params[:id], :readonly => false)
     # params will come in form of "item"=>{"<item id>"=>{"done"=>"1"}}
     item.update_attributes params[:item][params[:id]]
     render :json => item
