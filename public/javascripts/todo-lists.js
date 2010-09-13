@@ -10,6 +10,13 @@ $(function(){
       showListForm();
       return false;
     }
+  }); // show new list form on Shift + A press
+  
+  $('a.create').live('mouseenter', function(event){
+    $('a.create + p').css('visibility','visible');
+  });
+  $('a.create').live('mouseleave', function(event){
+    $('a.create + p').css('visibility','hidden');
   });
 
   $('form#new_todo_list input[type="button"]').live('click', function(){
