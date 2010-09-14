@@ -173,6 +173,7 @@ nav {
   ul.main a { display:block; font-size:1.3em }
   .main a[href="/login"], .main a[href="/fblogin"] { width:85%; margin:.5em auto }
   a.main, a.main[href="/"] { width:85%; font-size:2.65em; padding:.25em 1em .35em; margin-top:-1em }
+  a.create + p { display:none }
   
   #about a { text-decoration:none; font-weight:bold }
   
