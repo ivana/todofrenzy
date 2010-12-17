@@ -36,7 +36,7 @@
     </header>
     
     <% unless logged_in? %>
-      <a class="main" href="/login">Sign in with Twitter</a>
+      <%= link_to 'Sign in with Twitter', twitter_login_path, :class => 'main' %>
     <% end %>
 
     <%= yield %>

@@ -1,0 +1,19 @@
+defaults: &defaults
+  secret_token: <%= ENV['COOKIE_SECRET'] %>
+  heroku: <%= !!ENV['HEROKU_TYPE'] %>
+  twitter:
+    consumer_key: <%= ENV['TWITTER_KEY'] %>
+    secret: <%= ENV['TWITTER_SECRET'] %>
+
+development:
+  <<: *defaults
+
+test: &testing
+  <<: *defaults
+  secret_token: <%= "banana" * 5 %>
+
+cucumber:
+  <<: *testing
+
+production:
+  <<: *defaults

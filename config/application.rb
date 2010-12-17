@@ -6,14 +6,13 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
-settings = ERB.new(IO.read(File.expand_path('../settings.yml', __FILE__))).result
-$settings = Hashie::Mash.new YAML::load(settings)[Rails.env.to_s]
-
 module Todaslistas
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.from_file 'settings.yml'
 
     # Add additional load paths for your own custom dirs
     # config.autoload_paths += %W( #{config.root}/extras )
@@ -45,7 +44,8 @@ module Todaslistas
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    
-    config.middleware.use Twitter::Login, :consumer_key => $settings.twitter.consumer_key, :secret => $settings.twitter.secret
+
+    config.twitter_login = Twitter::Login.new \
+      :consumer_key => config.twitter.consumer_key, :secret => config.twitter.secret
   end
 end

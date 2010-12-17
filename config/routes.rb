@@ -7,6 +7,10 @@ Todaslistas::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
+  config = Todaslistas::Application.config
+  twitter = config.twitter_login.login_handler(:return_to => '/')
+  mount twitter => 'login', :as => :twitter_login
+
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
