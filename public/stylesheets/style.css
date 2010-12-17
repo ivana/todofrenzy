@@ -1,9 +1,5 @@
-* {
-  vertical-align:baseline;
-  padding:0; margin:0;
-}
-*::selection { background:sandybrown }
 *::-moz-selection { background:sandybrown }
+*::selection { background:sandybrown }
 
 body {
   font:62.5% Arial, Helvetica, sans-serif;
@@ -31,7 +27,7 @@ h2 {
 /* anchors, buttons */
 a { text-decoration:none }
 
-.actions a, a.main, .main a, input[type="submit"], input[type="button"] {
+.actions a, a.main, input[type="submit"], input[type="button"] {
   color:ivory;
   border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
 }
@@ -40,30 +36,17 @@ input[type="submit"], input[type="button"] { font-size:1em; cursor:pointer }
 input[type="submit"] { padding:.3em .5em; background:chocolate; border:0 none }
 input[type="button"] { padding:.2em .4em; background:sandybrown; border:0 none }
 
-a.main, ul.main {
+a.main {
   margin:0 auto;
   clear:left;
-}
-ul.main { width:30.5em }
-  ul.main li { display:inline }
-a.main, ul.main a {
   text-align:center;
   background:chocolate;
   box-shadow:1px 0 2px #555; -moz-box-shadow:1px 0 2px #555; -webkit-box-shadow:1px 0 2px #555;
-  padding:.45em 1em .55em;  
+  padding:.45em 1em .55em;
+  font-size:1.4em; display:block; width:9em;
 }
-a.main { font-size:1.4em; display:block; width:8em }
-ul.main a { font-size:1.17em; display:inline-block; margin-left:1.55em }
 
-a.main:hover, a.main:focus, a.main:active, .main a:hover, .main a:focus, .main a:active { background:#4c3000 }
-a[href="/login"] { width:8.5em }
-a[href="/fblogin"] { width:10em }
-a.main[href="/"] { width:9em }
-a.create + p {
-  visibility:hidden;
-  font-size:1.1em;
-  position:absolute; left:46.3%; padding-top:.3em;
-}
+a.main:hover, a.main:focus, a.main:active { background:#4c3000 }
 
 .actions a {
   display:block;
@@ -72,12 +55,14 @@ a.create + p {
   background-color:#F7D7B4;
   margin-bottom:2px;
 }
-.actions a.new-item { color:#4c3000; font-size:1.7em; line-height:1.4em }
-.actions a[data-method=delete] { color:chocolate }
-.actions a[data-method=put] { color:goldenrod }
-.actions a:hover, .actions a:focus, .actions a:active,
-input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active,
-input[type="button"]:hover, input[type="button"]:focus, input[type="button"]:active {
+.actions a.new { color:#4c3000; font-size:1.7em; line-height:1.4em }
+.actions a.delete { color:chocolate }
+.actions a.clear { color:goldenrod; display:none; }
+.has-done .actions a.clear { display:block; }
+
+.no-touch .actions a:hover, .no-touch .actions a:focus, .no-touch .actions a:active,
+.no-touch input[type="submit"]:hover, .no-touch input[type="submit"]:focus, .no-touch input[type="submit"]:active,
+.no-touch input[type="button"]:hover, .no-touch input[type="button"]:focus, .no-touch input[type="button"]:active {
   background:#4c3000; color:ivory;
 }
 
@@ -86,7 +71,8 @@ nav a:hover, #about a:hover { text-decoration:underline }
 
 /* lists */
 ol, ul { list-style-position: inside }
-body > ol, ol.actions, nav ol { list-style:none }
+body > ol, ol.actions, nav ol, ul.items { list-style:none; margin: 0; padding: 0; }
+body > ol > li, ol.actions > li, nav > ol > li, ul.items > li { margin: 0; }
 
 nav li {
   display:inline;
@@ -113,11 +99,11 @@ ul.items {
   line-height:1.7em;
   clear:left;
 }
-.done { text-decoration:line-through }
+ul.items .done label span { text-decoration:line-through }
 
 /* forms */
-input[type="text"] { border:2px solid chocolate }
-input[type="text"]:focus {
+.no-iphone input[type="text"] { border:2px solid chocolate }
+.no-touch input[type="text"]:focus {
   box-shadow:0 0 5px chocolate; -moz-box-shadow:0 0 5px chocolate; -webkit-box-shadow:0 0 5px chocolate;
   outline:0;
 }
@@ -134,8 +120,7 @@ form#new_todo_list {
 
 form#new_item { display:none; margin:1em 0 }
   form#new_item label { display:none }
-  input#item_description { font-size:1.1em; width:80% }
-  form#new_item input[type="submit"], form#new_item input[type="button"] { margin-top:.5em }
+  input#item_description { font-size:1.1em; width:80%; margin-bottom:.5em; }
 
 /* navigation */
 nav {
@@ -146,7 +131,7 @@ nav {
 
 /* about */
 #about h2 { float:none }
-#about ul { line-height:1.3em; list-style:disc outside; margin:.5em 0 0 1em }
+#about ul { line-height:1.3em; list-style:disc outside; margin:.5em 0 0 1em; padding-left: .3em; }
 #about p { margin-top:.5em }
 #about a { text-decoration:underline }
 #about a:hover { text-decoration:none }
@@ -173,7 +158,6 @@ nav {
   ul.main a { display:block; font-size:1.3em }
   .main a[href="/login"], .main a[href="/fblogin"] { width:85%; margin:.5em auto }
   a.main, a.main[href="/"] { width:85%; font-size:2.65em; padding:.25em 1em .35em; margin-top:-1em }
-  a.create + p { display:none }
   
   #about a { text-decoration:none; font-weight:bold }
   

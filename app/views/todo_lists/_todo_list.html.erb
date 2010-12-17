@@ -1,11 +1,11 @@
-<%= content_tag_for :li, list do %>
+<%= content_tag_for :li, list, :class => list.items.any?(&:done?) ? 'has-done' : nil do %>
   <h2><%= list.name %></h2>
 
   <ol class="actions">
-    <li><a class="new-item" href="#" title="New item">+</a></li>
-    <li><%= link_to mac?? '✗' : 'x', list, :remote => true, :method => 'delete',
-      :title => 'Delete list', :confirm => 'Are you sure you want to delete this list? There is no undo!' %></li>
-    <li><%= link_to mac?? '✓' : ':)', clear_todo_list_path(list), :remote => true, :method => 'put',
+    <li><a class="new" href="#new" title="New item">+</a></li>
+    <li><%= link_to mac?? '✗' : 'x', list, :remote => true, :method => 'delete', :class => 'delete',
+      :title => 'Delete list', :confirm => 'Are you sure you want to delete this whole list?' %></li>
+    <li><%= link_to mac?? '✓' : ':)', clear_todo_list_path(list), :remote => true, :method => 'put', :class => 'clear',
       :title => 'Clear done items' %></li>
   </ol>
 
