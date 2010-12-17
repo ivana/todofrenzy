@@ -136,40 +136,55 @@ nav {
 #about a { text-decoration:underline }
 #about a:hover { text-decoration:none }
 
-/* iPhone */
-@media all and (max-device-width:480px) {
+/* mobile */
+@media only screen and (max-device-width:480px) {
   
-  body { font-size:100%; margin:0 }
-    body > * { font-size:2em; line-height:1.5em }
-    
-    body > ol { margin-top:2em }
-      body > ol > li { float:none; width:86%; margin:1em auto }
+  body { font-size:small; margin:0; }
+    body > * { font-size: 1em; }
+    body > ol { margin-top:10px }
+      body > ol > li { float:none; width:auto; margin:5px; padding:9px; }
   
   h1 { float:none; margin:0 }
     h1 img { width:75%; margin-left:2% }
-  h2 { font-size:1.9em }
+  h2 { font-size:1.5em; width: auto; margin: 0 0 .4em; }
   
-  nav {  }
+  nav { display: none; } /* TMP */
     nav li { border:0 }
-    nav a[href="/about"], nav a[href="/"], nav strong { display:none }
+    nav a[href="/about"], nav strong { display:none }
     nav a[href="/logout"] { position:absolute; top:0; right:1em }
   
-  ul.main { width:100% }
-  ul.main a { display:block; font-size:1.3em }
-  .main a[href="/login"], .main a[href="/fblogin"] { width:85%; margin:.5em auto }
-  a.main, a.main[href="/"] { width:85%; font-size:2.65em; padding:.25em 1em .35em; margin-top:-1em }
+  a.main {
+    width: 10em; padding:.4em .6em .45em; margin-top:-.8em;
+    font-size:1.1em; font-weight: bold;
+    text-shadow: rgba(0,0,0,.3) 1px 1px 1px;
+  }
+  
+  a.main, body > ol > li { -webkit-box-shadow: none; }
+  input[type="submit"], input[type="button"] {
+    font-size:12px; padding:.3em .4em; margin:0;
+    background-color:silver; color:#222;
+    border: 1px solid silver;
+  }
+  input[type="button"] { color: #666; }
   
   #about a { text-decoration:none; font-weight:bold }
   
   .todo_list { overflow:hidden }
-  .actions a { font-size:2em }
-  .actions a.new-item { font-size:2.2em }
+  ol.actions { width:40px; margin-left:10px; }
+  ol.actions a { font-size:1.3em; margin-bottom:3px; line-height:40px; }
+  ol.actions li:last-child a { margin-bottom:0; }
+  ol.actions a.new { font-size:1.5em; line-height:40px }
   
-  form#new_todo_list { margin:0; padding:0 }
+  ul.items { line-height:1; font-size: 1.1em; }
+  ul.items > li { margin-left:23px; margin-top: .2em; }
+  ul.items input[type=checkbox] { margin-left:-23px; }
+  ul.items .done label span { text-decoration: none; color: gray; }
+  
+  form#new_item input#item_description { width:75%; margin-bottom:.3em; }
+  .iphone form#new_item input#item_description { margin-bottom:0; }
+  .iphone form#new_item input[type="submit"], .iphone form#new_item input[type="button"] { display: none; }
+  
+  form#new_todo_list { margin:-.8em 0 0 0; padding:0 15px; width:auto; }
     form#new_todo_list label { display:none }
-    input#todo_list_name { width:10.5em; margin-left:.8em }
-  form.edit_item { font-size:1.4em; line-height:1.5em }
-    form.edit_item label { vertical-align:top }
-    .done { text-decoration:none }
-    form.edit_item input[type="checkbox"] { width:3.5em; height:3.5em }
+    input#todo_list_name { width:272px; font-size:1.1em; margin:0 0 .3em; }
 }
