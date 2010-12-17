@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <a href="/" class="main">&lt;&lt; Back to My Lists</a>
+  <a href="/" class="main"><%= mac?? '←' : '<' %> Back to My Lists</a>
 <% end %>
 
 <ol id="about">
