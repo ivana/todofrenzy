@@ -40,7 +40,8 @@
 
     <%= yield %>
   
-    <%= javascript_include_tag "jquery-1.4.2.min", "rails", "todo-lists", "items", :cache => true %>
+    <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js' %>
+    <%= javascript_include_tag 'rails', 'todo-lists', 'items', :cache => !Todaslistas::Application.config.heroku %>
 
     <%= javascript_tag analytics_code if Rails.env.production? %>
       
