@@ -1,7 +1,7 @@
 <a href="#" class="create main">Create a new list</a>
 <p>Shift + A will do, too</p>
 
-<% form_for @todo_list, :remote => true do |l| %>
+<%= form_for @todo_list, :remote => true do |l| %>
   <div>
     <%= l.label(:name, 'List title:') %>
     <%= l.text_field(:name) %>
@@ -10,7 +10,7 @@
   </div>
 <% end %>
 
-<% form_for @item, :remote => true do |i| %>
+<%= form_for @item, :remote => true do |i| %>
   <div>
     <%= i.label :description, 'New item:' %>
     <%= i.text_field :description, :size => 24 %>
