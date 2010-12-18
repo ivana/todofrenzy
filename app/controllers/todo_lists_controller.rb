@@ -2,7 +2,7 @@ class TodoListsController < ApplicationController
 
   def index
     if logged_in?
-      @lists = current_user.todo_lists.latest
+      @lists = current_user.todo_lists.latest.includes(:items)
       @todo_list = current_user.todo_lists.new
       @item = @todo_list.items.new
     else
