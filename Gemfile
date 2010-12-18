@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '~> 3.0'
-gem 'twitter-login', '~> 0.4.1', :require => 'twitter/login'
+gem 'twitter-login', '~> 0.4.2', :require => 'twitter/login'
 gem 'choices'
 
 group :development, :test do

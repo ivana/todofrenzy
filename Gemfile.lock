@@ -67,7 +67,7 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    twitter-login (0.4.1)
+    twitter-login (0.4.2)
       hashie (>= 0.2.2)
       oauth (~> 0.4.2)
       yajl-ruby (>= 0.7.7)
@@ -81,4 +81,4 @@ DEPENDENCIES
   choices
   rails (~> 3.0)
   sqlite3-ruby
-  twitter-login (~> 0.4.1)
+  twitter-login (~> 0.4.2)

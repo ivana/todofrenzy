@@ -5,6 +5,16 @@ $(document.body).
   addClass((iPhone ? '' : 'no-') + 'iphone').
   addClass((supportsTouch ? '' : 'no-') + 'touch');
 
+if (window.navigator.standalone) {
+  // running as iOS full-screen app; make the Twitter login link ajaxy
+  $('a.main[href^="/login"]').attr('data-remote', 'true');
+  
+  $('nav a, h1 a, a[href="/"]').live('click', function(e){
+    e.preventDefault();
+    window.location.assign($(this).attr('href'));
+  });
+}
+
 // show new list form
 $('a.create').live('click', function(){
   showListForm();
