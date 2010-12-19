@@ -67,7 +67,7 @@ $('.todo_list .actions a.delete').
 $('.todo_list .actions a.clear').
   // user has chosen to clear done items, so hide them
   live('click', function(e){
-    $(this).closest('.todo_list').find('.item.done').hide();
+    $(this).closest('.todo_list').removeClass('has-done').find('.item.done').hide();
   }).
   // done items deleted on the server; delete them from the document, too
   live('ajax:success', function(e, data){
@@ -75,7 +75,7 @@ $('.todo_list .actions a.clear').
   }).
   // error clearing done items; unhide them
   live('ajax:error', function(e, xhr){
-    $(this).closest('.todo_list').find('.item.done:hidden').show();
+    $(this).closest('.todo_list').addClass('has-done').find('.item.done:hidden').show();
     alert("There's been an error clearing done items");
   });
 
