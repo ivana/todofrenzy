@@ -139,7 +139,7 @@ nav {
 /* mobile */
 @media only screen and (max-device-width:480px) {
   
-  body { font-size:small; margin:0; }
+  body { font-size:small; margin:10px 0 0 0; padding-bottom: 25px; position: relative; }
     body > * { font-size: 1em; }
     body > ol { margin-top:10px }
       body > ol > li { float:none; clear: both; width:auto; margin:5px; padding:9px; }
@@ -149,10 +149,12 @@ nav {
     h1 img { width: 197px; height: 28px; display: block; }
   h2 { font-size:1.5em; width: auto; margin: 0 0 .4em; }
   
-  nav { display: none; } /* TMP */
-    nav li { border:0 }
-    nav a[href="/about"], nav strong { display:none }
-    nav a[href="/logout"] { position:absolute; top:0; right:1em }
+  nav {
+    position:absolute; right:0; bottom:0;
+    width:290px; margin:0; padding:6px 15px;
+    color:gray; font-size:10px; text-transform:uppercase;
+  }
+  nav a:link, nav a:visited { color:inherit; }
   
   a.main {
     width: 10em; padding:.4em .6em .45em; margin-top:0;
