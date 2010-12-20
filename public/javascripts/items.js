@@ -12,7 +12,7 @@ $('form#new_item').
     // add the bare item HTML structure to the document
     list.find('.items').prepend('<li class="item pending"><div><input type="checkbox" /> <label></label></div></li>');
     // get the item description from the form input and populate the new `fake` item label
-    list.find('.pending label').text($(this).find('#item_description').val());
+    list.find('.pending:first label').text($(this).find('#item_description').val());
     // clear the form input and focus it to be ready for next item input,
     // but do it after a short delay so the form has the chance to submit the value
     setTimeout(function() { list.focusItemInput() }, 20);
