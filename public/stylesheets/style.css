@@ -144,27 +144,32 @@ form#new_item { display:none; margin:1em 0 }
   
   body { font-size:small; margin:10px 0 0 0; padding-bottom: 25px; position: relative; }
     body > * { font-size: 1em; }
-    body > ol { margin-top:10px }
-      body > ol > li { float:none; clear: both; width:auto; margin:5px; padding:9px; }
+    body > ol { margin-top:12px }
+      body > ol > li { float:none; clear: both; width:auto; margin:12px; padding:9px; }
   
-  header { float:left; width:203px; margin:0 0 10px; padding:0 0 0 15px; }
-  h1 { float:none; margin:0; padding:0; font-size:1em; }
+  header { float:left; width:203px; margin:0 0 15px; padding:0 0 0 12px; }
+    header h1 { margin:0; padding:0; font-size:1em; }
     h1 img { width: 197px; height: 28px; display: block; }
   h2 { font-size:1.5em; width: auto; margin: 0 0 .4em; }
   
   nav {
-    position:absolute; right:0; bottom:0;
-    width:290px; margin:0; padding:6px 15px;
-    color:gray; font-size:10px; text-transform:uppercase;
+    position:absolute; right:12px; bottom:0;
+    width:290px; margin:0; padding:6px 0;
+    text-align:right;
+    font-size:10px; text-transform:uppercase;
   }
   nav a:link, nav a:visited { color:inherit; }
   
+  footer { display:none; }
+  
+  a.main, form#new_todo_list { position:static; }
+  
   a.main {
-    width: 10em; padding:.4em .6em .45em; margin-top:0;
+    width:10em; height:18px; padding:5px .6em; clear:left;
     font-size:1.1em; font-weight: bold;
-    text-shadow: rgba(0,0,0,.3) 1px 1px 1px;
+    text-shadow:1px 1px 1px rgba(0,0,0,.2);
   }
-  a.create { width:4em; float:right; margin:0 15px 0 0; clear:none; }
+  a.create { width:60px; float:right; margin:0 12px 0 0; clear:none; }
   
   a.main, body > ol > li { -webkit-box-shadow: none; }
   input[type="submit"], input[type="button"] {
@@ -190,7 +195,7 @@ form#new_item { display:none; margin:1em 0 }
   .iphone form#new_item input#item_description { margin-bottom:0; }
   .iphone form#new_item input[type="submit"], .iphone form#new_item input[type="button"] { display: none; }
   
-  form#new_todo_list { margin:0; padding:0 15px; width:auto; }
+  form#new_todo_list { margin:0; padding:0 15px; width:auto; height:auto; }
     form#new_todo_list label { display:none }
     input#todo_list_name { width:272px; font-size:1.1em; margin:0 0 .3em; }
 }
