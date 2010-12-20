@@ -25,7 +25,10 @@ $('form#new_item').
   }).
   live('keyup', function(e){
     // dismiss new item form on ESCAPE key
-    if (e.which == 27) $(this).hide();
+    if (e.which == 27) {
+      e.preventDefault();
+      $(this).hide();
+    }
   });
 
 if (iPhone) {

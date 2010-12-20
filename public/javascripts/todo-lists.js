@@ -43,7 +43,10 @@ $('form#new_todo_list').live('ajax:success', function(event, data){
 
 // dismiss new list form on ESCAPE key
 $('form#new_todo_list').live('keyup', function(e){
-  if (e.which == 27) hideListForm();
+  if (e.which == 27) {
+    e.preventDefault();
+    hideListForm();
+  }
 });
 
 $('.todo_list .actions a.delete').
