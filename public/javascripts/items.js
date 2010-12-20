@@ -17,11 +17,15 @@ $('form#new_item').
     // but do it after a short delay so the form has the chance to submit the value
     setTimeout(function() { list.focusItemInput() }, 20);
   }).
+  bind('ajax:beforeSend', function(e, xhr){
+    // save the DOM element reference to the pending item
+    xhr._pendingItem = $(this).closest('.todo_list').find('.pending:first');
+  }).
   // the server has confirmed that the item was added
-  live('ajax:success', function(e, data){
-    var list = $(this).closest('.todo_list');
-    // replace the fake item with real HTML
-    list.find('.items').find('.pending:last').replaceWith(data);
+  live('ajax:success', function(e, data, status, xhr){
+    // replace the pending (fake) item with real HTML
+    xhr._pendingItem.replaceWith(data);
+    xhr._pendingItem = null;
   }).
   live('keyup', function(e){
     // dismiss new item form on ESCAPE key
