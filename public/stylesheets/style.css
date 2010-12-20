@@ -12,8 +12,8 @@ body {
 /* headings */
 h1 {
   font: italic normal 4em "times new roman", serif;
-  margin:0 0 -1.1em .5em;
-  float:left;
+  margin:0 0 -0.8em 0.5em;
+  width:265px;
 }
   h1 a { color:inherit }
   h1 img { border:none; max-width: 260px; display: block; }
@@ -33,17 +33,20 @@ a { text-decoration:none }
 }
 
 input[type="submit"], input[type="button"] { font-size:1em; cursor:pointer }
-input[type="submit"] { padding:.3em .5em; background:chocolate; border:0 none }
+input[type="submit"] { padding:.35em .5em; background:chocolate; border:0 none }
 input[type="button"] { padding:.2em .4em; background:sandybrown; border:0 none }
 
-a.main {
+a.main, form#new_todo_list {  
   margin:0 auto;
-  clear:left;
+  position:relative; top:12px;
+}
+
+a.main {
   text-align:center;
   background:chocolate;
   box-shadow:1px 0 2px #555; -moz-box-shadow:1px 0 2px #555; -webkit-box-shadow:1px 0 2px #555;
-  padding:.45em 1em .55em;
   font-size:1.4em; display:block; width:9em;
+  height:16px; padding:5px 1em;
 }
 
 a.main:hover, a.main:focus, a.main:active { background:#4c3000 }
@@ -108,12 +111,7 @@ ul.items .done label span { text-decoration:line-through }
   outline:0;
 }
 
-form#new_todo_list {
-  display:none;
-  padding:.25em 0 .2em;
-  margin:0 auto; width:34em; 
-  clear:left;
-}
+form#new_todo_list { display:none; width:34em; height:26px; }
   form#new_todo_list label, #new_todo_list input { vertical-align:middle }
   form#new_todo_list label { font-size:1.2em; visibility:hidden }
   input#todo_list_name { font-size:1.4em; margin:0 .2em; width:12em }
@@ -124,9 +122,10 @@ form#new_item { display:none; margin:1em 0 }
 
 /* navigation */
 nav {
-  text-align:right;
-  display:block;
-  margin-right:2em;
+  float: right;
+  margin-right: 2em;
+  text-align: right;
+  width: 30%; 
 }
 
 /* about */
