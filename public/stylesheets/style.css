@@ -102,7 +102,7 @@ ul.items {
   line-height:1.7em;
   clear:left;
 }
-ul.items .done label span { text-decoration:line-through }
+ul.items .done label span { color:#BEB4A2; }
 
 /* forms */
 .no-iphone input[type="text"] { border:2px solid chocolate }
@@ -181,7 +181,6 @@ nav {
   ul.items { line-height:1; font-size: 1.1em; }
   ul.items > li { margin-left:23px; margin-top: .2em; }
   ul.items input[type=checkbox] { margin-left:-23px; }
-  ul.items .done label span { text-decoration: none; color: gray; }
   
   form#new_item input#item_description { width:75%; margin-bottom:.3em; }
   .iphone form#new_item input#item_description { margin-bottom:0; }
