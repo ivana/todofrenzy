@@ -1,3 +1,5 @@
+header, footer, nav { display:block }
+
 *::-moz-selection { background:sandybrown }
 *::selection { background:sandybrown }
 
@@ -9,8 +11,19 @@ body {
 }
   body > * { font-size:1.2em }
 
+nav { float:right; margin-right:2em; text-align:right; width:30%; }
+
+footer {
+  clear:left; padding-top:2em; text-align:center;
+  color:#BEB4A2;
+}
+  footer * { display:inline; }
+  footer h1 { font:inherit; margin-right:1.2em; }
+  footer dt { font-weight:bold; }
+  footer dd { margin:0 1.2em 0 .5em; }
+
 /* headings */
-h1 {
+header h1 {
   font: italic normal 4em "times new roman", serif;
   margin:0 0 -0.8em 0.5em;
   width:265px;
@@ -23,7 +36,6 @@ h2 {
   margin:-.2em 0 .4em; width:82%;
   float:left;
 }
-
 /* anchors, buttons */
 a { text-decoration:none }
 
@@ -119,14 +131,6 @@ form#new_todo_list { display:none; width:34em; height:26px; }
 form#new_item { display:none; margin:1em 0 }
   form#new_item label { display:none }
   input#item_description { font-size:1.1em; width:80%; margin-bottom:.5em; }
-
-/* navigation */
-nav {
-  float: right;
-  margin-right: 2em;
-  text-align: right;
-  width: 30%; 
-}
 
 /* about */
 #about h2 { float:none }
