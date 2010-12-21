@@ -70,7 +70,7 @@ a.main:hover, a.main:focus, a.main:active { background:#4c3000 }
   background-color:#F7D7B4;
   margin-bottom:2px;
 }
-.actions a.new { color:#4c3000; font-size:1.7em; line-height:1.4em }
+.actions a.new { color:#4c3000; font-size:1.7em; line-height:1.35em }
 .actions a.delete { color:chocolate }
 .actions a.clear { color:goldenrod; display:none; }
 .has-done .actions a.clear { display:block; }
