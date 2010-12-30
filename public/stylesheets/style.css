@@ -114,6 +114,8 @@ ul.items {
   line-height:1.7em;
   clear:left;
 }
+  ul.items input[type="checkbox"] { float:left; }
+  ul.items label span { display: inline-block; padding-left: 0.3em; width: 72%; }
 ul.items .done label span { color:#BEB4A2; }
 
 /* forms */
@@ -187,8 +189,9 @@ form#new_item { display:none; margin:1em 0 }
   ol.actions a.new { font-size:1.5em; line-height:40px }
   
   ul.items { line-height:1; font-size: 1.1em; }
-  ul.items > li { margin-left:23px; margin-top: .2em; }
-  ul.items input[type=checkbox] { margin-left:-23px; }
+  ul.items > li { margin-left:23px; margin-top:.2em; }
+  ul.items input[type=checkbox] { margin-left:-23px; float:none }
+  ul.items label span { display:inline; padding-left:0 }
   
   form#new_item input#item_description { width:75%; margin-bottom:.3em; }
   .iphone form#new_item input#item_description { margin-bottom:0; }
