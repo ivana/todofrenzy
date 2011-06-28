@@ -7,9 +7,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     
     <title>Todas Listas</title>
-    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag "style" %>
     <link rel="icon" type="image/png" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
@@ -26,7 +27,7 @@
 
   <body>
     <header>
-      <h1><a href="/about"><img src="/images/logo.png" alt="Todas Listas" /></a></h1>
+      <h1><a href="/about"><img src="/assets/logo.png" alt="Todas Listas" /></a></h1>
 
     <% if logged_in? %>
       <nav>
@@ -43,9 +44,6 @@
     <% end %>
 
     <%= yield %>
-  
-    <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js' %>
-    <%= javascript_include_tag 'rails', 'todo-lists', 'items', :cache => !Todaslistas::Application.config.heroku %>
 
     <%= javascript_tag analytics_code if Rails.env.production? %>
       

@@ -45,6 +45,9 @@ module Todaslistas
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    # Enable the asset pipeline
+    config.assets.enabled = true
+    
     config.twitter_login = Twitter::Login.new \
       :consumer_key => config.twitter.consumer_key, :secret => config.twitter.secret
   end
