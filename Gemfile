@@ -1,9 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
-gem 'sass'
-gem 'coffee-script'
-gem 'uglifier'
+gem 'rails', '~> 3.1.0'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  # gem 'sass-rails', "  ~> 3.1.0"
+  # gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
 gem 'jquery-rails'
 
 gem 'twitter-login', '~> 0.4.2', :require => 'twitter/login'
