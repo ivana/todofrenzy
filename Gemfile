@@ -10,6 +10,11 @@ group :assets do
   gem 'uglifier'
 end
 
+group :production do
+  gem 'therubyracer-heroku', '~> 0.8.1.pre3', :require => nil
+  gem 'pg'
+end
+
 gem 'jquery-rails'
 
 gem 'twitter-login', '~> 0.4.2', :require => 'twitter/login'
