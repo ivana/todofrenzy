@@ -8,4 +8,6 @@
 //= require jquery_ujs
 //= require todo-lists
 //= require items
+//= require jquery-ui-sortable
+//= require sort
 // require_tree .

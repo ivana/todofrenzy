@@ -30,6 +30,13 @@ class TodoListsController < ApplicationController
     render :json => done_items
   end
 
+  def sort
+    params[:todo_list].each_with_index do |lid, i|
+      TodoList.find(lid).update_attribute :position, i
+    end
+    render :json => true
+  end
+
   def about
   end
 

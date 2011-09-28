@@ -13,10 +13,9 @@ body {
 
 nav { float:right; margin-right:2em; text-align:right; width:30%; }
 
-footer {
-  clear:left; padding-top:2em; text-align:center;
-  color:#BEB4A2;
-}
+footer, #todas + p { clear:left; text-align:center; color:#BEB4A2; }
+#todas + p { padding-top:3em; }
+footer { padding-top:1em; }
   footer * { display:inline; }
   footer h1 { font:inherit; margin-right:1.2em; }
   footer dt { font-weight:bold; }

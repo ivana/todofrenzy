@@ -23,9 +23,11 @@
   </div>
 <% end %>
 
-<ol>
+<ol id="todas">
   <%= render :partial => @lists, :as => :list %>
 </ol>
+
+<% if @lists.count > 1 %><p>Sort lists with drag &amp; drop!</p><% end %>
 
 <footer>
   <h1>keyboard shortcuts:</h1>

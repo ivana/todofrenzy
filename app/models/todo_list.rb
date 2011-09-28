@@ -4,5 +4,5 @@ class TodoList < ActiveRecord::Base
 
   validates_presence_of :name, :user_id 
   
-  scope :latest, :order => 'created_at DESC'
+  scope :latest, :order => 'position, created_at DESC'
 end
