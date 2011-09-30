@@ -137,6 +137,7 @@ form#new_item { display:none; margin:1em 0 }
 #about h2 { float:none; width:100%; margin-bottom:.7em; }
 #about ul { line-height:1.3em; list-style:disc outside; margin:.5em 0 0 1em; padding-left: .3em; }
 #about p { margin-top:.5em }
+  #about p:last-child { margin:1em 0 0; }
 #about a { text-decoration:underline }
 #about a:hover { text-decoration:none }
 
