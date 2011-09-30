@@ -11,57 +11,22 @@ Todaslistas::Application.routes.draw do
   twitter = config.twitter_login.login_handler(:return_to => '/')
   mount twitter => 'login', :as => :twitter_login
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # Named routes
   # This route can be invoked with purchase_url(:id => product.id)
   match 'logout' => 'sessions#logout', :as => :logout
   match 'about' => 'todo_lists#about', :as => :about
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  # Resource routes
   resources :items
 
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get :short
-  #       post :toggle
-  #     end
-  #
-  #     collection do
-  #       get :sold
-  #     end
-  #   end
   resources :todo_lists do
     member do
       put :clear
     end
   end
 
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get :recent, :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
   root :to => "todo_lists#index"
 
   # See how all your routes lay out with "rake routes"
