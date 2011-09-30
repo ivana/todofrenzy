@@ -12,7 +12,6 @@ class TodoListsController < ApplicationController
 
   def create
     @list = current_user.todo_lists.create! params[:todo_list]
-    
     render :partial => 'todo_list', :locals => { :list => @list }
   end
 

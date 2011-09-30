@@ -13,4 +13,11 @@ class ItemsController < ApplicationController
     render :json => item
   end
 
+  def sort
+    params[:item].each_with_index do |iid, i|
+      Item.find(iid).update_attribute :position, i
+    end
+    render :json => true
+  end
+
 end

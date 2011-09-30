@@ -17,7 +17,11 @@ Todaslistas::Application.routes.draw do
   match 'about' => 'todo_lists#about', :as => :about
 
   # Resource routes
-  resources :items
+  resources :items do
+    collection do
+      put :sort
+    end
+  end
 
   resources :todo_lists do
     member do
