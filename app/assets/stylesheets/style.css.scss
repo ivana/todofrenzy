@@ -168,7 +168,7 @@ input#item_description { font-size:1.1em; width:80%; margin-bottom:.5em; }
     a:link, a:visited { color:inherit; }
   }
   
-  footer { display:none; }
+  footer, #todas + p { display:none; }
   
   a.main, #new_todo_list { position:static; }
   a.main {
