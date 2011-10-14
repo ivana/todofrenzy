@@ -111,8 +111,8 @@ body > ol { margin-top:4em;
 ol.actions { float:right; width:12%; margin-left:1em }
 
 ul.items { list-style:none; clear:left;
-  li { line-height:20px; }
-  input[type="checkbox"] { float:left; }
+  li { line-height:20px; margin:2px 0; }
+  input[type="checkbox"] { margin:3px 2px; }
   
   label span { display:inline; padding-left:3px; width:72%; word-wrap:break-word; }
   .done label span { color:#BEB4A2; }
