@@ -1,4 +1,6 @@
 @import 'compass';
+$sans-family: Arial, Helvetica, sans-serif;
+$fallback-serif: "times new roman", georgia, serif;
 
 header, footer, nav { display:block }
 
@@ -6,7 +8,7 @@ header, footer, nav { display:block }
 *::selection { background:sandybrown }
 
 body {
-  font:62.5% Arial, Helvetica, sans-serif;
+  font:62.5% $sans-family;
   background:ivory; color:#4C3000;
   margin:1em auto;
   max-width:115em;
@@ -28,14 +30,14 @@ footer { padding-top:1em;
 
 /* headings */
 header h1 {
-  font: italic normal 4em "times new roman", serif;
+  font: italic normal 4em $fallback-serif;
   margin:0 0 -0.8em 0.5em;
   width:265px;
 }
 h1 a { color:inherit }
 h1 img { border:none; max-width: 260px; display: block; }
 h2 {
-  font:italic 500 1.8em/1.1 didot, "times new roman", georgia, serif;
+  font:italic 500 1.8em/1.1 didot, $fallback-serif;
   color:#4c3000;
   margin:-.2em 0 .4em; width:82%;
   float:left;
@@ -157,7 +159,7 @@ input#item_description { font-size:1.1em; width:80%; margin-bottom:.5em; }
     h1 { margin:0; padding:0; font-size:1em; }
   }
   h1 img { width: 197px; height: 28px; display: block; }
-  h2 { font-size:1.6em; margin:-0.3em 0 .5em; }
+  h2 { font-size:1.6em; font-family:$fallback-serif; margin:-0.3em 0 .5em; }
   
   nav {
     position:absolute; right:12px; bottom:0;
@@ -178,7 +180,7 @@ input#item_description { font-size:1.1em; width:80%; margin-bottom:.5em; }
   }
   a.create { width:60px; float:right; margin:0 12px 0 0; clear:none; }
   
-  a.main, body > ol > li { -webkit-box-shadow: none; }
+  a.main, body > ol > li { -webkit-box-shadow:none; }
   input[type="submit"], input[type="button"] {
     font-size:12px; padding:.3em .4em; margin:0;
     background-color:silver; color:#222;
@@ -187,6 +189,7 @@ input#item_description { font-size:1.1em; width:80%; margin-bottom:.5em; }
   input[type="button"] { color: #666; }
   
   #about a { text-decoration:none; font-weight:bold }
+  #about h2 { margin-top:0; }
   
   .todo_list { overflow:hidden }
 
