@@ -114,9 +114,9 @@ ol.actions { float:right; width:12%; margin-left:1em }
 
 ul.items { list-style:none; clear:left;
   li { line-height:20px; margin:2px 0; }
-  input[type="checkbox"] { margin:3px 2px; }
+  input[type="checkbox"] { margin:3px 2px 3px 0; }
   
-  label span { display:inline; padding-left:3px; width:72%; word-wrap:break-word; }
+  label span { display:inline; width:72%; word-wrap:break-word; }
   .done label span { color:#BEB4A2; }
 }
 
@@ -203,7 +203,7 @@ input#item_description { font-size:1.1em; width:80%; margin-bottom:.5em; }
   ul.items { line-height:1; font-size: 1.1em;
     > li { margin-left:23px; margin-top:.2em; }
     input[type=checkbox] { margin-left:-23px; float:none }
-    label span { display:inline; padding-left:0 }
+    label span { display:inline; }
   }
   
   #new_item {
