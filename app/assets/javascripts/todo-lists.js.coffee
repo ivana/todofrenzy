@@ -1,4 +1,4 @@
-supportsTouch = 'createTouch' of document
+window.supportsTouch = 'createTouch' of document
 window.iPhone = supportsTouch and /\b(iPhone|iPod)\b/.test navigator.userAgent
 
 $ ->
