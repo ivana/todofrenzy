@@ -1,7 +1,8 @@
 supportsTouch = 'createTouch' of document
 window.iPhone = supportsTouch and /\b(iPhone|iPod)\b/.test navigator.userAgent
 
-$(document.body).addClass("#{if iPhone then '' else 'no-'}iphone").addClass("#{if supportsTouch then '' else 'no-'}touch")
+$ ->
+  $(document.body).addClass("#{if iPhone then '' else 'no-'}iphone").addClass("#{if supportsTouch then '' else 'no-'}touch")
 
 if window.navigator.standalone
   # running as iOS full-screen app; make the Twitter login link ajaxy
