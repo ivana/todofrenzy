@@ -2,7 +2,7 @@
 $('.todo_list .actions a.new').live 'click', ->
   $(this).closest('.todo_list').showNewItemForm()
   this.blur();
-  return false
+  false
 
 # immediately after submitting new item to the server, add it to the list too
 $('form#new_item').live 'submit', ->

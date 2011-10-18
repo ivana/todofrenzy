@@ -16,18 +16,18 @@ if window.navigator.standalone
 # show NEW LIST form
 $('a.create').live 'click', ->
   showListForm()
-  return false
+  false
 
 # show new list form on Shift + A
 $(document).keypress (e) ->
   if e.which == 65 and $(e.target).parents('form:not(:hidden)').size() == 0
     showListForm()
-    return false
+    false
 
 # dissmiss new list form
 $('form#new_todo_list input[type="button"]').live 'click', ->
   hideListForm()
-  return false
+  false
 
 # insert the created list into the document
 $('form#new_todo_list').live 'ajax:success', (event, data) ->
