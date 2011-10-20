@@ -136,13 +136,16 @@ input#todo_list_name { font-size:1.4em; margin:0 .2em; width:12em }
 input#item_description { font-size:1.1em; width:80%; margin-bottom:.5em; }
 
 /* about */
-#about h2 { float:none; width:100%; margin-bottom:.7em; }
-#about ul { line-height:1.3em; list-style:disc outside; margin:.5em 0 0 1em; padding-left: .3em; }
-#about p { margin-top:.5em;
-  &:last-child { margin:1em 0 0; }
-}
-#about a { text-decoration:underline;
-  &:hover { text-decoration:none }
+#about {
+  h2 { float:none; width:100%; margin-bottom:.7em; }
+  ul { line-height:1.3em; list-style:disc outside; margin:.5em 0 0 1em; padding-left: .3em; }
+  p, ul li { line-height:1.5; }
+  p { margin-top:.5em;
+    &:last-child { margin:1em 0 0; }
+  }
+  a { text-decoration:underline;
+    &:hover { text-decoration:none }
+  }
 }
 
 /* mobile */
